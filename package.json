@@ -11,8 +11,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "mobx": "^6.4.2",
+    "mobx-react": "^7.3.0",
     "react": "17.0.2",
-    "react-native": "0.67.3"
+    "react-native": "0.67.3",
+    "react-native-eject": "^0.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
