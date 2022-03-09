@@ -1,27 +1,24 @@
-import { action, makeObservable, observable } from "mobx"
+import { action, makeObservable, observable } from 'mobx';
 
-class Counter {
-    counter = 0;
+export default class Counter {
+  count = 0;
 
-    constructor() {
-        makeObservable(this, {
-            counter: observable,
-            increase: action,
-            decrease: action,
-        })
-    }
+  constructor() {
+    makeObservable(this, {
+      count: observable,
+      increase: action,
+      decrease: action,
+    });
+  }
 
-    increase = () => {
-        console.log(this.counter);
-        ++this.counter
+  increase = () => {
+    ++this.count;
+    console.log(this.count);
+  };
 
-        console.log(this.counter);
-
-    }
-
-    decrease = () => {
-        --this.counter
-    }
+  decrease = () => {
+    --this.count;
+  };
 }
 
-export const counter = new Counter()
+export const counter = new Counter();

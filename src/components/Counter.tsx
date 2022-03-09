@@ -1,27 +1,15 @@
-import { inject, observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { counter } from '../mobx/Counter';
 
-// import counterStore from '../mobx/Counter';
-
-const Counter = (props) => {
+const Counter = () => {
   const [u, setu] = useState(0);
-
-  const { counter, increase, decrease } = props.counter;
-  console.log(props.counter.increse);
+  const { count, increase, decrease } = counter;
 
   return (
     <View>
-      <Text
-        style={{
-          fontSize: 20,
-          textAlign: 'center',
-          fontWeight: 'bold',
-          color: 'red',
-        }}
-      >
-        I love Vadim Barabanov {counter}
-      </Text>
+      <Text>I love Vadim Barabanov {count}</Text>
       <TouchableOpacity onPress={increase}>
         <Text>+</Text>
       </TouchableOpacity>
@@ -36,4 +24,4 @@ const Counter = (props) => {
   );
 };
 
-export default inject('counter')(observer(Counter));
+export default observer(Counter);
