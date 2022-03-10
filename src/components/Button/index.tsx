@@ -18,15 +18,11 @@ export const Button = ({
 
   return (
     <TouchableOpacity
-      style={[
-        styles.button,
-        variant === Variant.PRIMARY
-          ? theme.backgroundPrimary
-          : theme.backgroundSecondary,
-      ]}
+      style={[styles.button, theme.background[variant]]}
+      activeOpacity={0.8}
       {...rest}
     >
-      <Text>{text}</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };

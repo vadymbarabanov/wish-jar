@@ -13,7 +13,6 @@ export default class Counter {
 
   increase = () => {
     ++this.count;
-    console.log(this.count);
   };
 
   decrease = () => {

@@ -1,17 +1,18 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import Counter from './components/Counter';
-import { ThemeProvider } from './components/ThemeProvider';
+import { useTheme } from './components/ThemeProvider';
 
-const App = () => {
+export const App = () => {
+  const { theme } = useTheme();
+
   return (
-    <ThemeProvider>
-      <SafeAreaView>
-        <StatusBar barStyle="dark-content" backgroundColor="transparent" />
-        <Counter />
-      </SafeAreaView>
-    </ThemeProvider>
+    <SafeAreaView style={[theme.background.primary, { flex: 1 }]}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={theme.background.primary.backgroundColor}
+      />
+      <Counter />
+    </SafeAreaView>
   );
 };
-
-export default App;
