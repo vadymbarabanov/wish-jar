@@ -1,7 +1,7 @@
 import React, { useContext, FC, useState } from 'react';
 import { useColorScheme } from 'react-native';
 import { getGlobalStyles } from '../../styles';
-import { Theme } from '../../types/styles';
+import { Theme } from '../../types/Styles';
 
 const defaultThemeContext = {
   theme: getGlobalStyles(Theme.LIGHT),

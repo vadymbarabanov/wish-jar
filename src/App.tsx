@@ -6,8 +6,13 @@ import { useTheme } from './components/ThemeProvider';
 export const App = () => {
   const { theme } = useTheme();
 
+  const wrapperStyle = {
+    flex: 1,
+    padding: 16,
+  };
+
   return (
-    <SafeAreaView style={[theme.background.primary, { flex: 1 }]}>
+    <SafeAreaView style={[theme.background.primary, wrapperStyle]}>
       <StatusBar
         barStyle="light-content"
         backgroundColor={theme.background.primary.backgroundColor}

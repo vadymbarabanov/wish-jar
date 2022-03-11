@@ -15,7 +15,8 @@
     "mobx-react-lite": "^3.3.0",
     "react": "17.0.2",
     "react-native": "0.67.3",
-    "react-native-eject": "^0.1.2"
+    "react-native-eject": "^0.1.2",
+    "react-native-svg": "^12.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

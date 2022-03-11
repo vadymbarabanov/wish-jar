@@ -1,13 +1,14 @@
+import React from 'react';
+import { Text, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
-import React, { useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
 import { counter } from '../mobx/Counter';
-import { Variant } from '../types/styles';
-import { Button } from './Button';
+import { Variant } from '../types/Styles';
 import { useTheme } from './ThemeProvider';
+import { Button } from './Button';
+import { Input } from './Inputs/Input';
+import { PasswordInput } from './Inputs/PasswordInput';
 
 const Counter = () => {
-  const [u, setu] = useState(0);
   const { toggleTheme } = useTheme();
 
   const { count, increase, decrease } = counter;
@@ -24,9 +25,8 @@ const Counter = () => {
       <Button text="-" onPress={decrease} />
       <Button text="Toggle Theme" onPress={toggleTheme} />
 
-      <TouchableOpacity onPress={() => setu(Math.random())}>
-        <Text>{u}</Text>
-      </TouchableOpacity>
+      <Input label="Email" />
+      <PasswordInput />
     </View>
   );
 };
