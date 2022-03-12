@@ -1,3 +1,3 @@
 export const palette = {
-  link: '#797EF6',
+  link: '#1AA7EC',
 };
