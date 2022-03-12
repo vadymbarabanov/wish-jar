@@ -1,12 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { counter } from '../mobx/Counter';
 import { Variant } from '../types/Styles';
 import { useTheme } from './ThemeProvider';
-import { Button } from './Button';
+import { Button } from './Buttons/Button';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
+import { IconButton } from './Buttons/IconButton';
+import { CloseIcon } from '../icons/CloseIcon';
+import { AddIcon } from '../icons/AddIcon';
+import { RemoveIcon } from '../icons/RemoveIcon';
+import { EditIcon } from '../icons/EditIcon';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();
@@ -14,7 +19,7 @@ const Counter = () => {
   const { count, increase, decrease } = counter;
 
   return (
-    <View>
+    <ScrollView>
       <Text>I love Vadim Barabanov {count}</Text>
       <Button text="PRIMARY" variant={Variant.PRIMARY} />
       <Button text="SECONDARY" variant={Variant.SECONDARY} />
@@ -27,7 +32,15 @@ const Counter = () => {
 
       <Input label="Email" />
       <PasswordInput />
-    </View>
+      <IconButton icon={<CloseIcon color="red" />} />
+      <IconButton icon={<RemoveIcon color="red" />} />
+      <IconButton icon={<EditIcon color="red" />} />
+      <IconButton
+        outlined
+        containerStyles={{ backgroundColor: 'yellow', borderColor: 'blue' }}
+        icon={<AddIcon color="red" />}
+      />
+    </ScrollView>
   );
 };
 
