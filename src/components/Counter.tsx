@@ -7,6 +7,7 @@ import { useTheme } from './ThemeProvider';
 import { Button } from './Buttons/Button';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
+import { RadioButton } from './Buttons/RadioButton';
 import { IconButton } from './Buttons/IconButton';
 import { CloseIcon } from './Icons/CloseIcon';
 import { AddIcon } from './Icons/AddIcon';
@@ -16,7 +17,9 @@ import { Checkbox } from './Buttons/Checkbox';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();
+
   const [checkbox, setCheckbox] = useState<number[]>([]);
+  const [radio, setRadio] = useState<number>();
 
   const { count, increase, decrease } = counter;
 
@@ -30,6 +33,16 @@ const Counter = () => {
 
   return (
     <ScrollView>
+      <RadioButton
+        label="Radio 1"
+        active={radio === 1}
+        onPress={() => setRadio(1)}
+      />
+      <RadioButton
+        label="Radio 2"
+        active={radio === 2}
+        onPress={() => setRadio(2)}
+      />
       <Checkbox
         label="Checkbox 1"
         active={checkbox.includes(1)}
