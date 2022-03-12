@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { counter } from '../mobx/Counter';
 import { Variant } from '../types/Styles';
@@ -7,6 +7,11 @@ import { useTheme } from './ThemeProvider';
 import { Button } from './Buttons/Button';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
+import { IconButton } from './Buttons/IconButton';
+import { CloseIcon } from './Icons/CloseIcon';
+import { AddIcon } from './Icons/AddIcon';
+import { RemoveIcon } from './Icons/RemoveIcon';
+import { EditIcon } from './Icons/EditIcon';
 import { Checkbox } from './Buttons/Checkbox';
 
 const Counter = () => {
@@ -24,7 +29,7 @@ const Counter = () => {
   };
 
   return (
-    <View>
+    <ScrollView>
       <Checkbox
         label="Checkbox 1"
         active={checkbox.includes(1)}
@@ -47,7 +52,15 @@ const Counter = () => {
 
       <Input label="Email" />
       <PasswordInput />
-    </View>
+      <IconButton icon={<CloseIcon color="red" />} />
+      <IconButton icon={<RemoveIcon color="red" />} />
+      <IconButton icon={<EditIcon color="red" />} />
+      <IconButton
+        outlined
+        containerStyles={{ backgroundColor: 'yellow', borderColor: 'blue' }}
+        icon={<AddIcon color="red" />}
+      />
+    </ScrollView>
   );
 };
 

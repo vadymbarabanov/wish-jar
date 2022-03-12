@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { useTheme } from '../components/ThemeProvider';
-import { IconProps } from '../types/Icon';
+import { useTheme } from '../ThemeProvider';
+import { IconProps } from '../../types/Icon';
 
 export const ClosedEyeIcon = ({ color }: IconProps) => {
   const { theme } = useTheme();
