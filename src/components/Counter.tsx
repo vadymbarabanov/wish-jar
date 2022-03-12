@@ -13,6 +13,7 @@ import { AddIcon } from './Icons/AddIcon';
 import { RemoveIcon } from './Icons/RemoveIcon';
 import { EditIcon } from './Icons/EditIcon';
 import { Checkbox } from './Buttons/Checkbox';
+import { CheckIcon } from './Icons/CheckIcon';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();
@@ -53,6 +54,7 @@ const Counter = () => {
       <Input label="Email" />
       <PasswordInput />
       <IconButton icon={<CloseIcon color="red" />} />
+      <IconButton icon={<CheckIcon color="red" />} />
       <IconButton icon={<RemoveIcon color="red" />} />
       <IconButton icon={<EditIcon color="red" />} />
       <IconButton
