@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ClosedEyeIcon } from '../../../icons/ClosedEyeIcon';
-import { EyeIcon } from '../../../icons/EyeIcon';
+import { ClosedEyeIcon } from '../../Icons/ClosedEyeIcon';
+import { EyeIcon } from '../../Icons/EyeIcon';
 import { Input, InputProps } from '../Input';
 
 export const PasswordInput = ({

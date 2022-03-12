@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { counter } from '../mobx/Counter';
 import { Variant } from '../types/Styles';
@@ -8,15 +8,31 @@ import { Button } from './Buttons/Button';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
 import { RadioButton } from './Buttons/RadioButton';
+import { IconButton } from './Buttons/IconButton';
+import { CloseIcon } from './Icons/CloseIcon';
+import { AddIcon } from './Icons/AddIcon';
+import { RemoveIcon } from './Icons/RemoveIcon';
+import { EditIcon } from './Icons/EditIcon';
+import { Checkbox } from './Buttons/Checkbox';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();
+
+  const [checkbox, setCheckbox] = useState<number[]>([]);
   const [radio, setRadio] = useState<number>();
 
   const { count, increase, decrease } = counter;
 
+  const handleCheckbox = (value: number) => {
+    if (checkbox.includes(value)) {
+      return setCheckbox(checkbox.filter((item) => item !== value));
+    }
+
+    setCheckbox([...checkbox, value]);
+  };
+
   return (
-    <View>
+    <ScrollView>
       <RadioButton
         label="Radio 1"
         active={radio === 1}
@@ -27,7 +43,16 @@ const Counter = () => {
         active={radio === 2}
         onPress={() => setRadio(2)}
       />
-
+      <Checkbox
+        label="Checkbox 1"
+        active={checkbox.includes(1)}
+        onPress={() => handleCheckbox(1)}
+      />
+      <Checkbox
+        label="Checkbox 2"
+        active={checkbox.includes(2)}
+        onPress={() => handleCheckbox(2)}
+      />
       <Text>I love Vadim Barabanov {count}</Text>
       <Button text="PRIMARY" variant={Variant.PRIMARY} />
       <Button text="SECONDARY" variant={Variant.SECONDARY} />
@@ -40,7 +65,15 @@ const Counter = () => {
 
       <Input label="Email" />
       <PasswordInput />
-    </View>
+      <IconButton icon={<CloseIcon color="red" />} />
+      <IconButton icon={<RemoveIcon color="red" />} />
+      <IconButton icon={<EditIcon color="red" />} />
+      <IconButton
+        outlined
+        containerStyles={{ backgroundColor: 'yellow', borderColor: 'blue' }}
+        icon={<AddIcon color="red" />}
+      />
+    </ScrollView>
   );
 };
 
