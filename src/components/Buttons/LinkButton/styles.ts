@@ -1,13 +1,16 @@
 import { StyleSheet } from 'react-native';
+import { palette } from '../../../styles/palette';
+import buttonStyles from '../styles';
 
 export const styles = StyleSheet.create({
   text: {
-    color: '#797EF6',
-    fontSize: 20,
+    color: palette.link,
+    fontSize: buttonStyles.fontSize,
     textAlign: 'center',
   },
   linkButton: {
     alignSelf: 'center',
-    padding: 15,
+    padding: buttonStyles.padding,
+    marginVertical: buttonStyles.marginVertical,
   },
 });

@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, TouchableOpacityProps, Text } from 'react-native';
+import { TouchableOpacityProps, Text } from 'react-native';
+import { BaseButton } from '../BaseButton';
 import { styles } from './styles';
 
 interface LinkButtonProps extends TouchableOpacityProps {
@@ -8,8 +9,8 @@ interface LinkButtonProps extends TouchableOpacityProps {
 
 export const LinkButton = ({ text, ...rest }: LinkButtonProps) => {
   return (
-    <TouchableOpacity style={styles.linkButton} {...rest} activeOpacity={0.8}>
+    <BaseButton style={styles.linkButton} {...rest}>
       <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
+    </BaseButton>
   );
 };

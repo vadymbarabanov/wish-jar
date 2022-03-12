@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Text, TouchableOpacityProps } from 'react-native';
 import { Variant } from '../../../types/Styles';
 import { useTheme } from '../../ThemeProvider';
+import { BaseButton } from '../BaseButton';
 import { styles } from './styles';
 
 interface ButtonProps extends TouchableOpacityProps {
@@ -17,12 +18,8 @@ export const Button = ({
   const { theme } = useTheme();
 
   return (
-    <TouchableOpacity
-      style={[styles.button, theme.background[variant]]}
-      activeOpacity={0.8}
-      {...rest}
-    >
+    <BaseButton style={[styles.button, theme.background[variant]]} {...rest}>
       <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
+    </BaseButton>
   );
 };
