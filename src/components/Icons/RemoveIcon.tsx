@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { IconProps } from '../types/Icon';
+import { IconProps } from '../../types/Icon';
 
 export const RemoveIcon = ({ color }: IconProps) => {
   return (

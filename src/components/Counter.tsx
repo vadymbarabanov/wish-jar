@@ -8,10 +8,10 @@ import { Button } from './Buttons/Button';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
 import { IconButton } from './Buttons/IconButton';
-import { CloseIcon } from '../icons/CloseIcon';
-import { AddIcon } from '../icons/AddIcon';
-import { RemoveIcon } from '../icons/RemoveIcon';
-import { EditIcon } from '../icons/EditIcon';
+import { CloseIcon } from './Icons/CloseIcon';
+import { AddIcon } from './Icons/AddIcon';
+import { RemoveIcon } from './Icons/RemoveIcon';
+import { EditIcon } from './Icons/EditIcon';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();

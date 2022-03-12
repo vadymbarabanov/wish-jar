@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, { Line } from 'react-native-svg';
-import { IconProps } from '../types/Icon';
+import { IconProps } from '../../types/Icon';
 
 export const CloseIcon = ({ color }: IconProps) => {
   return (
