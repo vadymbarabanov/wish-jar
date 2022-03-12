@@ -1,41 +1,41 @@
 import { StyleSheet } from 'react-native';
 import { Theme } from '../types/Styles';
-import { palette } from './palette';
+import { themes } from './themes';
 
 export const getGlobalStyles = (theme: Theme) => {
   const background = StyleSheet.create({
     primary: {
-      backgroundColor: palette[theme].primary,
+      backgroundColor: themes[theme].primary,
     },
     secondary: {
-      backgroundColor: palette[theme].secondary,
+      backgroundColor: themes[theme].secondary,
     },
     warning: {
-      backgroundColor: palette[theme].warning,
+      backgroundColor: themes[theme].warning,
     },
     error: {
-      backgroundColor: palette[theme].error,
+      backgroundColor: themes[theme].error,
     },
     info: {
-      backgroundColor: palette[theme].info,
+      backgroundColor: themes[theme].info,
     },
   });
 
   const borderColor = StyleSheet.create({
     primary: {
-      borderColor: palette[theme].primary,
+      borderColor: themes[theme].primary,
     },
     secondary: {
-      borderColor: palette[theme].secondary,
+      borderColor: themes[theme].secondary,
     },
     warning: {
-      borderColor: palette[theme].warning,
+      borderColor: themes[theme].warning,
     },
     error: {
-      borderColor: palette[theme].error,
+      borderColor: themes[theme].error,
     },
     info: {
-      borderColor: palette[theme].info,
+      borderColor: themes[theme].info,
     },
   });
 
