@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useTheme } from '../../ThemeProvider';
-import { styles } from './styles';
+import { useStyles } from '../../../helpers/hooks/useStyles';
+import { createStyles } from './styles';
 
 export interface InputProps extends TextInputProps {
   label?: string;
@@ -16,12 +16,12 @@ export interface InputProps extends TextInputProps {
 }
 
 export const Input = ({ label, icon, onIconPress, ...rest }: InputProps) => {
-  const { theme } = useTheme();
+  const styles = useStyles(createStyles);
 
   return (
     <View style={styles.outerWrapper}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={[styles.innerWrapper, theme.borderColor.secondary]}>
+      <View style={styles.innerWrapper}>
         <TextInput style={[styles.input]} {...rest} />
         {icon && (
           <TouchableOpacity onPress={onIconPress}>{icon}</TouchableOpacity>

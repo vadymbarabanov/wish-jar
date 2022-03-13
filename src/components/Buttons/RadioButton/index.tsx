@@ -5,7 +5,8 @@ import {
   TouchableWithoutFeedbackProps,
   View,
 } from 'react-native';
-import { styles } from './styles';
+import { useStyles } from '../../../helpers/hooks/useStyles';
+import { createStyles } from './styles';
 
 interface RadioButtonProps extends TouchableWithoutFeedbackProps {
   label: string;
@@ -13,6 +14,8 @@ interface RadioButtonProps extends TouchableWithoutFeedbackProps {
 }
 
 export const RadioButton = ({ label, active, ...rest }: RadioButtonProps) => {
+  const styles = useStyles(createStyles);
+
   return (
     <TouchableWithoutFeedback {...rest}>
       <View style={styles.wrapper}>

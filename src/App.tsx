@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
+import { useTheme } from './helpers/hooks/useTheme';
 import Counter from './components/Counter';
-import { useTheme } from './components/ThemeProvider';
 
 export const App = () => {
   const { theme } = useTheme();
@@ -9,14 +9,12 @@ export const App = () => {
   const wrapperStyle = {
     flex: 1,
     padding: 16,
+    backgroundColor: theme.primary,
   };
 
   return (
-    <SafeAreaView style={[theme.background.primary, wrapperStyle]}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={theme.background.primary.backgroundColor}
-      />
+    <SafeAreaView style={wrapperStyle}>
+      <StatusBar barStyle="light-content" backgroundColor={theme.primary} />
       <Counter />
     </SafeAreaView>
   );

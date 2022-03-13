@@ -1,16 +1,21 @@
 import { StyleSheet } from 'react-native';
-import { palette } from '../../../styles/palette';
+import { CreateStyles } from '../../../types/Styles';
 import buttonStyles from '../styles';
 
-export const styles = StyleSheet.create({
-  text: {
-    color: palette.link,
-    fontSize: buttonStyles.fontSize,
-    textAlign: 'center',
-  },
-  linkButton: {
-    alignSelf: 'center',
-    padding: buttonStyles.padding,
-    marginVertical: buttonStyles.marginVertical,
-  },
-});
+export const createStyles: CreateStyles = (theme) => {
+  const styles = StyleSheet.create({
+    text: {
+      color: theme.link,
+      fontSize: buttonStyles.fontSize,
+      textAlign: 'center',
+    },
+    linkButton: {
+      alignSelf: 'center',
+
+      padding: buttonStyles.padding,
+      marginVertical: buttonStyles.marginVertical,
+    },
+  });
+
+  return styles;
+};

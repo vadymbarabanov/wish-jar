@@ -3,17 +3,18 @@ import { ScrollView, Text } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { counter } from '../mobx/Counter';
 import { Variant } from '../types/Styles';
-import { useTheme } from './ThemeProvider';
-import { Button } from './Buttons/Button';
+import { showSuccessToast } from '../helpers/toast';
+import { useTheme } from '../helpers/hooks/useTheme';
 import { Input } from './Inputs/Input';
 import { PasswordInput } from './Inputs/PasswordInput';
+import { Button } from './Buttons/Button';
 import { RadioButton } from './Buttons/RadioButton';
 import { IconButton } from './Buttons/IconButton';
+import { Checkbox } from './Buttons/Checkbox';
 import { CloseIcon } from './Icons/CloseIcon';
 import { AddIcon } from './Icons/AddIcon';
 import { RemoveIcon } from './Icons/RemoveIcon';
 import { EditIcon } from './Icons/EditIcon';
-import { Checkbox } from './Buttons/Checkbox';
 import { CheckIcon } from './Icons/CheckIcon';
 
 const Counter = () => {
@@ -30,6 +31,7 @@ const Counter = () => {
     }
 
     setCheckbox([...checkbox, value]);
+    showSuccessToast();
   };
 
   return (

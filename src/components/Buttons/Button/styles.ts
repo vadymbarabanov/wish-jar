@@ -1,14 +1,22 @@
 import { StyleSheet } from 'react-native';
+import { CreateStyles } from '../../../types/Styles';
 import buttonStyles from '../styles';
 
-export const styles = StyleSheet.create({
-  button: {
-    padding: buttonStyles.padding,
-    marginVertical: buttonStyles.marginVertical,
-    borderRadius: buttonStyles.borderRadius,
-  },
-  text: {
-    textAlign: 'center',
-    fontSize: buttonStyles.fontSize,
-  },
-});
+export const createStyles: CreateStyles = (theme, variant) => {
+  const styles = StyleSheet.create({
+    button: {
+      padding: buttonStyles.padding,
+      marginVertical: buttonStyles.marginVertical,
+
+      borderRadius: buttonStyles.borderRadius,
+
+      backgroundColor: theme[variant!],
+    },
+    text: {
+      fontSize: buttonStyles.fontSize,
+      textAlign: 'center',
+    },
+  });
+
+  return styles;
+};

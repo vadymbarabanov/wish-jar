@@ -1,16 +1,14 @@
-import React, { useContext, FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useColorScheme } from 'react-native';
-import { getGlobalStyles } from '../../styles';
+import { themes } from '../../styles/themes';
 import { Theme } from '../../types/Styles';
 
 const defaultThemeContext = {
-  theme: getGlobalStyles(Theme.LIGHT),
+  theme: themes[Theme.LIGHT],
   toggleTheme: () => {},
 };
 
-const ThemeContext = React.createContext(defaultThemeContext);
-
-export const useTheme = () => useContext(ThemeContext);
+export const ThemeContext = React.createContext(defaultThemeContext);
 
 export const ThemeProvider: FC = ({ children }) => {
   // Check user's prefered theme mode
@@ -21,14 +19,11 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 
   const toggleTheme = () => {
-    if (theme === Theme.LIGHT) {
-      return setTheme(Theme.DARK);
-    }
-    setTheme(Theme.LIGHT);
+    setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
   };
 
   const value = {
-    theme: getGlobalStyles(theme),
+    theme: themes[theme],
     toggleTheme,
   };
 
