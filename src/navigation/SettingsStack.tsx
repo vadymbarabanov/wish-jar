@@ -1,12 +1,13 @@
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NewPassword } from '../screens/NewPassword';
-import { OldPassword } from '../screens/OldPAssword';
+import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
 import { SignUp } from '../screens/SignUp';
 
 const Stack = createStackNavigator();
 
-export const AuthStack = () => {
+export const SettingsStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Settings" component={Settings} />

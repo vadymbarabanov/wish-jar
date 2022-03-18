@@ -1,3 +1,4 @@
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NewPassword } from '../screens/NewPassword';
 import { ResetPassword } from '../screens/ResetPassword';
