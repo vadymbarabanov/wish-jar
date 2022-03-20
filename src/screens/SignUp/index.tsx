@@ -5,14 +5,14 @@ import { LinkButton } from '../../components/Buttons/LinkButton';
 import { EmailInput } from '../../components/Inputs/EmailInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
 import { Title } from '../../components/Title';
-import { Wrapper } from '../../components/Wrapper';
+import { CentrifyWrapper } from '../../components/CentrifyWrapper';
 import { AuthScreenProps } from '../../navigation/AuthStack';
 import { AuthStackRoutes } from '../../navigation/routes';
 import globalStyles from '../../styles/global';
 
 export const SignUp = ({ navigation }: AuthScreenProps) => {
   return (
-    <Wrapper>
+    <CentrifyWrapper>
       <Title style={globalStyles.marginVertical} text="Sign Up" />
       <KeyboardAvoidingView>
         <EmailInput style={globalStyles.marginVertical} />
@@ -27,6 +27,6 @@ export const SignUp = ({ navigation }: AuthScreenProps) => {
         onPress={() => navigation.navigate(AuthStackRoutes.SIGN_IN)}
         text="I already have an account"
       />
-    </Wrapper>
+    </CentrifyWrapper>
   );
 };

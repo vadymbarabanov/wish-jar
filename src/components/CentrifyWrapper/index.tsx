@@ -3,7 +3,11 @@ import { View, ViewProps } from 'react-native';
 import { useStyles } from '../../helpers/hooks/useStyles';
 import { createStyles } from './styles';
 
-export const Wrapper: FC<ViewProps> = ({ style, children, ...rest }) => {
+export const CentrifyWrapper: FC<ViewProps> = ({
+  style,
+  children,
+  ...rest
+}) => {
   const styles = useStyles(createStyles);
 
   return (

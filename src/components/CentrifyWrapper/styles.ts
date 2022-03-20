@@ -4,9 +4,8 @@ import { CreateStyles } from '../../types/Styles';
 export const createStyles: CreateStyles = () => {
   const styles = StyleSheet.create({
     outerWrapper: {
+      flex: 1,
       justifyContent: 'center',
-
-      height: '100%',
     },
     innerWrapper: {
       paddingHorizontal: 30,
