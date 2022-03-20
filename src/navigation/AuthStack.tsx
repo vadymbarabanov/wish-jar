@@ -1,21 +1,40 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NewPassword } from '../screens/NewPassword';
-import { ResetPassword } from '../screens/ResetPassword';
+import { getHeaderOptions } from '../helpers/navigation/getHeaderOptions';
+import { AuthRoutes } from './routes';
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { Verification } from '../screens/Verification';
+import { ResetPasswordStack } from './ResetPasswordStack';
 
 const Stack = createStackNavigator();
 
 export const AuthStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Sign In" component={SignIn} />
-      <Stack.Screen name="Sign Up" component={SignUp} />
-      <Stack.Screen name="Verification" component={Verification} />
-      <Stack.Screen name="Reset Password" component={ResetPassword} />
-      <Stack.Screen name="New Password" component={NewPassword} />
+    <Stack.Navigator
+      initialRouteName={AuthRoutes.SIGN_IN}
+      screenOptions={{ animationTypeForReplace: 'pop', gestureEnabled: false }}
+    >
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthRoutes.SIGN_IN}
+        component={SignIn}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthRoutes.SIGN_UP}
+        component={SignUp}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthRoutes.VERIFICATION}
+        component={Verification}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthRoutes.RESET_PASSWORD}
+        component={ResetPasswordStack}
+      />
     </Stack.Navigator>
   );
 };

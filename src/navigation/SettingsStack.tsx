@@ -1,19 +1,37 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { getHeaderOptions } from '../helpers/navigation/getHeaderOptions';
+import { SettingsStackRoutes } from './routes';
 import { NewPassword } from '../screens/NewPassword';
 import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
-import { SignUp } from '../screens/SignUp';
+import { Language } from '../screens/Language';
 
 const Stack = createStackNavigator();
 
 export const SettingsStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="Language" component={SignUp} />
-      <Stack.Screen name="Old Password" component={OldPassword} />
-      <Stack.Screen name="New Password" component={NewPassword} />
+    <Stack.Navigator initialRouteName={SettingsStackRoutes.SETTINGS}>
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={SettingsStackRoutes.SETTINGS}
+        component={Settings}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={SettingsStackRoutes.LANGUAGE}
+        component={Language}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={SettingsStackRoutes.OLD_PASSSWORD}
+        component={OldPassword}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={SettingsStackRoutes.NEW_PASSSWORD}
+        component={NewPassword}
+      />
     </Stack.Navigator>
   );
 };
