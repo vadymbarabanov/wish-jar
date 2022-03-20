@@ -16,6 +16,9 @@ export const createStyles: CreateStyles = (theme, variant) => {
       fontSize: buttonStyles.fontSize,
       textAlign: 'center',
     },
+    disabledButton: {
+      backgroundColor: theme.disabled,
+    },
   });
 
   return styles;

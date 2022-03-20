@@ -12,7 +12,6 @@ export const createStyles: CreateStyles = (theme) => {
     linkButton: {
       alignSelf: 'center',
 
-      padding: buttonStyles.padding,
       marginVertical: buttonStyles.marginVertical,
     },
   });

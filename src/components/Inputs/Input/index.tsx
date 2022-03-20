@@ -15,11 +15,17 @@ export interface InputProps extends TextInputProps {
   onIconPress?: () => void;
 }
 
-export const Input = ({ label, icon, onIconPress, ...rest }: InputProps) => {
+export const Input = ({
+  style,
+  label,
+  icon,
+  onIconPress,
+  ...rest
+}: InputProps) => {
   const styles = useStyles(createStyles);
 
   return (
-    <View style={styles.outerWrapper}>
+    <View style={[styles.outerWrapper, style]}>
       {label && <Text style={styles.label}>{label}</Text>}
       <View style={styles.innerWrapper}>
         <TextInput style={[styles.input]} {...rest} />

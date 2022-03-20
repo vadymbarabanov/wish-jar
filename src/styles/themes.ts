@@ -10,6 +10,8 @@ export const themes: Record<Theme, Palette> = {
     link: '#1AA7EC',
     placeholder: '#F8F7ED',
     success: 'green',
+    disabled: 'grey',
+    text: 'black',
   },
   light: {
     primary: '#687489',
@@ -20,5 +22,7 @@ export const themes: Record<Theme, Palette> = {
     link: '#1AA7EC',
     placeholder: '#F8F7ED',
     success: 'green',
+    disabled: 'grey',
+    text: 'black',
   },
 };
