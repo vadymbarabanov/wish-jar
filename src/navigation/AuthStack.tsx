@@ -1,30 +1,45 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NewPassword } from '../screens/NewPassword';
-import { ResetPassword } from '../screens/ResetPassword';
+import { getHeaderOptions } from '../helpers/navigation/getHeaderOptions';
+import { AuthStackRoutes } from './routes';
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { Verification } from '../screens/Verification';
+import { ResetPasswordStack } from './ResetPasswordStack';
 import type { StackScreenProps } from '@react-navigation/stack';
 
-export type AuthScreenProps = StackScreenProps<{
-  'Sign In': undefined;
-  'Sign Up': undefined;
-  'Reset Password': undefined;
-  'New Password': undefined;
-  Verification: undefined;
-}>;
+export type AuthScreenProps = StackScreenProps<
+  Record<AuthStackRoutes, undefined>
+>;
 
 const Stack = createStackNavigator();
 
 export const AuthStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Sign In" component={SignIn} />
-      <Stack.Screen name="Sign Up" component={SignUp} />
-      <Stack.Screen name="Verification" component={Verification} />
-      <Stack.Screen name="Reset Password" component={ResetPassword} />
-      <Stack.Screen name="New Password" component={NewPassword} />
+    <Stack.Navigator
+      initialRouteName={AuthStackRoutes.SIGN_IN}
+      screenOptions={{ animationTypeForReplace: 'pop', gestureEnabled: false }}
+    >
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthStackRoutes.SIGN_IN}
+        component={SignIn}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthStackRoutes.SIGN_UP}
+        component={SignUp}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthStackRoutes.VERIFICATION}
+        component={Verification}
+      />
+      <Stack.Screen
+        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        name={AuthStackRoutes.RESET_PASSWORD}
+        component={ResetPasswordStack}
+      />
     </Stack.Navigator>
   );
 };

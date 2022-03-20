@@ -8,6 +8,7 @@ import { Title } from '../../components/Title';
 import { Wrapper } from '../../components/Wrapper';
 import { useStyles } from '../../helpers/hooks/useStyles';
 import { AuthScreenProps } from '../../navigation/AuthStack';
+import { AuthStackRoutes } from '../../navigation/routes';
 import { createStyles } from './styles';
 
 export const SignIn = ({ navigation }: AuthScreenProps) => {
@@ -22,11 +23,11 @@ export const SignIn = ({ navigation }: AuthScreenProps) => {
         <Button style={styles.marginBottom} text="Sign In" />
       </KeyboardAvoidingView>
       <LinkButton
-        onPress={() => navigation.navigate('Sign Up')}
+        onPress={() => navigation.navigate(AuthStackRoutes.SIGN_UP)}
         text="I don't have account"
       />
       <LinkButton
-        onPress={() => navigation.push('Reset Password')}
+        onPress={() => navigation.push(AuthStackRoutes.RESET_PASSWORD)}
         text="Forgot password"
       />
     </Wrapper>
