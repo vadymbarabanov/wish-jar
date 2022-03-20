@@ -11,6 +11,7 @@ interface ButtonProps extends TouchableOpacityProps {
 }
 
 export const Button = ({
+  style,
   variant = Variant.PRIMARY,
   text,
   ...rest
@@ -18,7 +19,10 @@ export const Button = ({
   const styles = useStyles(createStyles, variant);
 
   return (
-    <BaseButton style={styles.button} {...rest}>
+    <BaseButton
+      style={[styles.button, style, rest.disabled && styles.disabledButton]}
+      {...rest}
+    >
       <Text style={styles.text}>{text}</Text>
     </BaseButton>
   );

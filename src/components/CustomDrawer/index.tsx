@@ -34,11 +34,7 @@ export const CustomDrawer = ({ navigation }: DrawerContentComponentProps) => {
         <CustomDrawerItem icon={InfoIcon} label="About" onPress={() => {}} />
       </View>
 
-      <View
-        style={{
-          margin: 20,
-        }}
-      >
+      <View style={styles.bottomSection}>
         <Warning text="To save your jars, please, sign in!" />
         <View style={styles.buttonContainer}>
           <Button

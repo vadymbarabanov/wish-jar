@@ -5,7 +5,12 @@ import { SettingsStackRoutes } from './routes';
 import { NewPassword } from '../screens/NewPassword';
 import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
+import type { StackScreenProps } from '@react-navigation/stack';
 import { Language } from '../screens/Language';
+
+export type SettingsScreenProps = StackScreenProps<
+  Record<SettingsStackRoutes, undefined>
+>;
 
 const Stack = createStackNavigator();
 

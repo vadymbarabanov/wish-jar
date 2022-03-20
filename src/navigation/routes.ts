@@ -5,7 +5,7 @@ export enum DrawerRoutes {
   AUTH = 'authStack',
 }
 
-export enum AuthRoutes {
+export enum AuthStackRoutes {
   SIGN_IN = 'signIn',
   SIGN_UP = 'signUp',
   VERIFICATION = 'verification',

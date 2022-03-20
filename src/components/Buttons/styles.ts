@@ -1,8 +1,10 @@
 const buttonStyles = {
-  fontSize: 20,
-  padding: 15,
   marginVertical: 5,
+  padding: 15,
+
   borderRadius: 10,
+
+  fontSize: 20,
 };
 
 export default buttonStyles;

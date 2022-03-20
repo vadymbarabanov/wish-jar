@@ -12,9 +12,10 @@ export const createStyles: CreateStyles = (theme) => {
       backgroundColor: theme.primary,
     },
     itemContainer: {
-      borderRadius: 0,
       marginVertical: 0,
       marginHorizontal: 0,
+
+      borderRadius: 0,
     },
     itemIconContainer: {
       paddingLeft: 10,
@@ -27,6 +28,9 @@ export const createStyles: CreateStyles = (theme) => {
     },
     buttonContainer: {
       paddingTop: 20,
+    },
+    bottomSection: {
+      margin: 20,
     },
   });
   return styles;

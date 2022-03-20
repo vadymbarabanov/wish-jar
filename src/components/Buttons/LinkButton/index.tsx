@@ -8,11 +8,11 @@ interface LinkButtonProps extends TouchableOpacityProps {
   text: string;
 }
 
-export const LinkButton = ({ text, ...rest }: LinkButtonProps) => {
+export const LinkButton = ({ style, text, ...rest }: LinkButtonProps) => {
   const styles = useStyles(createStyles);
 
   return (
-    <BaseButton style={styles.linkButton} {...rest}>
+    <BaseButton style={[styles.linkButton, style]} {...rest}>
       <Text style={styles.text}>{text}</Text>
     </BaseButton>
   );

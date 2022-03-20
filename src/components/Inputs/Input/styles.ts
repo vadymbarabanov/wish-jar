@@ -21,12 +21,14 @@ export const createStyles: CreateStyles = (theme) => {
       flex: 1,
 
       fontSize: 16,
+      color: theme.text,
     },
     label: {
       marginBottom: 10,
       marginLeft: 10,
 
       fontSize: 16,
+      color: theme.text,
     },
   });
 
