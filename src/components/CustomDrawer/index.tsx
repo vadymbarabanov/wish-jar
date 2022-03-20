@@ -39,8 +39,8 @@ export const CustomDrawer = ({ navigation }: DrawerContentComponentProps) => {
           margin: 20,
         }}
       >
-        <Warning text={'To save your jars, please, sign in!'} />
-        <View style={{ paddingTop: 20 }}>
+        <Warning text="To save your jars, please, sign in!" />
+        <View style={styles.buttonContainer}>
           <Button
             text="Sign In"
             variant={Variant.WARNING}

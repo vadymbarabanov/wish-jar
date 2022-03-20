@@ -29,8 +29,8 @@ export const CustomDrawerItem = ({
           <Icon color={theme.warning} />
         </View>
       )}
-      labelStyle={styles.text}
-      style={{ borderRadius: 0, marginVertical: 0, marginHorizontal: 0 }}
+      labelStyle={styles.itemLabel}
+      style={styles.itemIconContainer}
       pressColor={theme.info}
       activeTintColor={theme.info}
     />

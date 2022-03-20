@@ -11,14 +11,22 @@ export const createStyles: CreateStyles = (theme) => {
 
       backgroundColor: theme.primary,
     },
-    iconContainer: {
+    itemContainer: {
+      borderRadius: 0,
+      marginVertical: 0,
+      marginHorizontal: 0,
+    },
+    itemIconContainer: {
       paddingLeft: 10,
     },
-    text: {
+    itemLabel: {
       marginLeft: -17,
 
       color: theme.warning,
       fontSize: 20,
+    },
+    buttonContainer: {
+      paddingTop: 20,
     },
   });
   return styles;
