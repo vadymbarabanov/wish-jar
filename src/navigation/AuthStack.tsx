@@ -36,7 +36,7 @@ export const AuthStack = () => {
         component={Verification}
       />
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={{ headerShown: false }}
         name={AuthStackRoutes.RESET_PASSWORD}
         component={ResetPasswordStack}
       />

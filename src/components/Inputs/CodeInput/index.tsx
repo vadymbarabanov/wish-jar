@@ -27,7 +27,7 @@ export const CodeInput = ({ label, value, onChangeText }: CodeInputProps) => {
 
   return (
     <SafeAreaView style={styles.root}>
-      <Text style={styles.title}>{label}</Text>
+      {label && <Text style={styles.title}>{label}</Text>}
       <CodeField
         ref={ref}
         {...props}
