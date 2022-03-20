@@ -1,6 +1,6 @@
 # Wish Jar
 
-### Styling order preference
+### Styling order preferences
 
 ```javascript
 StyleSheet.create({
