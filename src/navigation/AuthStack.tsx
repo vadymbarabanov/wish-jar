@@ -5,6 +5,15 @@ import { ResetPassword } from '../screens/ResetPassword';
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { Verification } from '../screens/Verification';
+import type { StackScreenProps } from '@react-navigation/stack';
+
+export type AuthScreenProps = StackScreenProps<{
+  'Sign In': undefined;
+  'Sign Up': undefined;
+  'Reset Password': undefined;
+  'New Password': undefined;
+  Verification: undefined;
+}>;
 
 const Stack = createStackNavigator();
 

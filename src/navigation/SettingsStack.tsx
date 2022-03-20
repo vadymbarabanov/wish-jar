@@ -4,6 +4,14 @@ import { NewPassword } from '../screens/NewPassword';
 import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
 import { SignUp } from '../screens/SignUp';
+import type { StackScreenProps } from '@react-navigation/stack';
+
+export type SettingsScreenProps = StackScreenProps<{
+  Settings: undefined;
+  Language: undefined;
+  'New Password': undefined;
+  'Old Password': undefined;
+}>;
 
 const Stack = createStackNavigator();
 
