@@ -6,21 +6,18 @@ import { EmailInput } from '../../components/Inputs/EmailInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
 import { Title } from '../../components/Title';
 import { Wrapper } from '../../components/Wrapper';
-import { useStyles } from '../../helpers/hooks/useStyles';
 import { AuthScreenProps } from '../../navigation/AuthStack';
 import { AuthStackRoutes } from '../../navigation/routes';
-import { createStyles } from './styles';
+import globalStyles from '../../styles/global';
 
 export const SignIn = ({ navigation }: AuthScreenProps) => {
-  const styles = useStyles(createStyles);
-
   return (
     <Wrapper>
-      <Title style={styles.marginBottom} text="Sign In" />
+      <Title style={globalStyles.marginVertical} text="Sign In" />
       <KeyboardAvoidingView>
-        <EmailInput style={styles.marginBottom} />
-        <PasswordInput style={styles.marginBottom} label="Password" />
-        <Button style={styles.marginBottom} text="Sign In" />
+        <EmailInput style={globalStyles.marginVertical} />
+        <PasswordInput style={globalStyles.marginVertical} label="Password" />
+        <Button style={globalStyles.marginVertical} text="Sign In" />
       </KeyboardAvoidingView>
       <LinkButton
         onPress={() => navigation.navigate(AuthStackRoutes.SIGN_UP)}

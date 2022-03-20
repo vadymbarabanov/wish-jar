@@ -5,8 +5,8 @@ import buttonStyles from '../styles';
 export const createStyles = (theme: Palette) => {
   const styles = StyleSheet.create({
     wrapper: {
-      alignSelf: 'flex-start',
       flexDirection: 'row',
+      alignSelf: 'flex-start',
       alignItems: 'center',
 
       marginVertical: buttonStyles.marginVertical,
@@ -21,42 +21,40 @@ export const createStyles = (theme: Palette) => {
       width: 30,
       height: 30,
 
+      marginRight: 10,
+
       borderWidth: 4,
       borderRadius: 2,
       borderColor: theme.placeholder,
-
-      marginRight: 10,
     },
     check: {
       position: 'relative',
     },
     left: {
+      position: 'absolute',
+      bottom: -4,
+      right: -1,
+      transform: [{ rotate: '45deg' }],
+
       width: 10,
       height: 5,
 
       borderRadius: 2,
 
       backgroundColor: theme.placeholder,
-
-      position: 'absolute',
-      bottom: -4,
-      right: -1,
-
-      transform: [{ rotate: '45deg' }],
     },
     right: {
+      position: 'absolute',
+      bottom: -2,
+      left: -5,
+      transform: [{ rotate: '-45deg' }],
+
       width: 15,
       height: 5,
 
       borderRadius: 2,
 
       backgroundColor: theme.placeholder,
-
-      position: 'absolute',
-      bottom: -2,
-      left: -5,
-
-      transform: [{ rotate: '-45deg' }],
     },
   });
 

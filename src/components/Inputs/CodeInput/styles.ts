@@ -1,29 +1,35 @@
 import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../../types/Styles';
 
+// Be careful when change styles related to react-native-confirmation-code-field
+// They can overlap each other
 export const createStyles: CreateStyles = () => {
   const styles = StyleSheet.create({
     root: {
-      padding: 20,
       minHeight: 300,
+
+      padding: 20,
     },
     title: {
       textAlign: 'center',
       fontSize: 30,
     },
     codeFieldRoot: {
-      marginTop: 20,
       width: 280,
+
+      marginTop: 20,
       marginLeft: 'auto',
       marginRight: 'auto',
     },
     cellRoot: {
-      width: 60,
-      height: 60,
       justifyContent: 'center',
       alignItems: 'center',
-      borderBottomColor: '#ccc',
+
+      width: 60,
+      height: 60,
+
       borderBottomWidth: 1,
+      borderBottomColor: '#ccc',
     },
     cellText: {
       color: '#000',
@@ -31,8 +37,8 @@ export const createStyles: CreateStyles = () => {
       textAlign: 'center',
     },
     focusCell: {
-      borderBottomColor: '#007AFF',
       borderBottomWidth: 2,
+      borderBottomColor: '#007AFF',
     },
   });
 

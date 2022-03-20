@@ -5,8 +5,8 @@ import buttonStyles from '../styles';
 export const createStyles: CreateStyles = (theme, variant) => {
   const styles = StyleSheet.create({
     button: {
-      padding: buttonStyles.padding,
       marginVertical: buttonStyles.marginVertical,
+      padding: buttonStyles.padding,
 
       borderRadius: buttonStyles.borderRadius,
 

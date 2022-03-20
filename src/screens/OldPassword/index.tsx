@@ -3,17 +3,14 @@ import { Button } from '../../components/Buttons/Button';
 import { LinkButton } from '../../components/Buttons/LinkButton';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
 import { Wrapper } from '../../components/Wrapper';
-import { useStyles } from '../../helpers/hooks/useStyles';
-import { createStyles } from './styles';
+import globalStyles from '../../styles/global';
 
 export const OldPassword = () => {
-  const styles = useStyles(createStyles);
-
   return (
     <Wrapper>
-      <PasswordInput style={styles.marginBottom} label="Old Password" />
-      <Button style={styles.marginBottom} text="Next" />
-      <LinkButton style={styles.marginBottom} text="Forgot Password" />
+      <PasswordInput style={globalStyles.marginVertical} label="Old Password" />
+      <Button style={globalStyles.marginVertical} text="Next" />
+      <LinkButton style={globalStyles.marginVertical} text="Forgot Password" />
     </Wrapper>
   );
 };

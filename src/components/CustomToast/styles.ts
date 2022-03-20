@@ -16,11 +16,11 @@ export const createStyles: CreateStyles = (theme) => {
       backgroundColor: theme.info,
     },
     sideLine: {
-      marginLeft: 35,
-      marginRight: 20,
-
       height: '100%',
       width: 7,
+
+      marginLeft: 35,
+      marginRight: 20,
     },
     sideLineError: {
       backgroundColor: theme.error,
