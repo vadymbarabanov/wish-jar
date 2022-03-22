@@ -1,0 +1,34 @@
+{
+    "sign-in": {
+        "title": "Вхід",
+        "button-text": "Увійти",
+        "no-account": "У мене немає акаунту",
+        "no-password": "Не пам'ятаю пароль"
+    },
+    "sign-up": {
+        "title": "Реєстрація",
+        "button-text": "Зареєструватись",
+        "account-exists": "У мене вже є акаунт"
+    },
+    "verification": {
+        "title": "Введіть верифікаційний код",
+        "button-text": "Підтвердити"
+    },
+    "reset-password": {
+        "title": "Відновити пароль",
+        "button-text": "Відновити"
+    },
+    "old-password": {
+        "label": "Старий пароль",
+        "button-text": "Далі",
+        "no-password": "Не пам'ятаю пароль"
+    },
+    "new-password": {
+        "label": "Новий пароль",
+        "button-text": "Підтвердити"
+    },
+    "common": {
+        "password": "Пароль",
+        "confirm-password": "Повторити Пароль"
+    }
+}

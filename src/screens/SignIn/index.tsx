@@ -9,23 +9,26 @@ import { CentrifyWrapper } from '../../components/CentrifyWrapper';
 import { AuthScreenProps } from '../../navigation/AuthStack';
 import { AuthStackRoutes } from '../../navigation/routes';
 import globalStyles from '../../styles/global';
+import { useTranslation } from 'react-i18next';
 
 export const SignIn = ({ navigation }: AuthScreenProps) => {
+  const { t } = useTranslation('sign-in');
+
   return (
     <CentrifyWrapper>
-      <Title style={globalStyles.marginVertical} text="Sign In" />
+      <Title style={globalStyles.marginVertical} text={t('title')} />
       <KeyboardAvoidingView>
         <EmailInput style={globalStyles.marginVertical} />
-        <PasswordInput style={globalStyles.marginVertical} label="Password" />
-        <Button style={globalStyles.marginVertical} text="Sign In" />
+        <PasswordInput style={globalStyles.marginVertical} />
+        <Button style={globalStyles.marginVertical} text={t('button-text')} />
       </KeyboardAvoidingView>
       <LinkButton
         onPress={() => navigation.navigate(AuthStackRoutes.SIGN_UP)}
-        text="I don't have account"
+        text={t('no-account')}
       />
       <LinkButton
         onPress={() => navigation.push(AuthStackRoutes.RESET_PASSWORD)}
-        text="Forgot password"
+        text={t('no-password')}
       />
     </CentrifyWrapper>
   );
