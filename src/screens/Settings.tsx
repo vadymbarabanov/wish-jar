@@ -9,8 +9,8 @@ export const Settings = ({ navigation }: SettingsScreenProps) => {
     <View>
       <Text>Settings</Text>
       <Button
-        text="New Password"
-        onPress={() => navigation.navigate(SettingsStackRoutes.NEW_PASSSWORD)}
+        text="Languages"
+        onPress={() => navigation.navigate(SettingsStackRoutes.LANGUAGE)}
       />
     </View>
   );

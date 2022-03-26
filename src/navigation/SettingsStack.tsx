@@ -5,8 +5,8 @@ import { SettingsStackRoutes } from './routes';
 import { NewPassword } from '../screens/NewPassword';
 import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
+import { Languages } from '../screens/Settings/Languages';
 import type { StackScreenProps } from '@react-navigation/stack';
-import { Language } from '../screens/Language';
 
 export type SettingsScreenProps = StackScreenProps<
   Record<SettingsStackRoutes, undefined>
@@ -25,7 +25,7 @@ export const SettingsStack = () => {
       <Stack.Screen
         options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
         name={SettingsStackRoutes.LANGUAGE}
-        component={Language}
+        component={Languages}
       />
       <Stack.Screen
         options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}

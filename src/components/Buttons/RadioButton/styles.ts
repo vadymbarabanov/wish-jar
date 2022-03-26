@@ -16,6 +16,7 @@ export const createStyles: CreateStyles = (theme) => {
     },
     text: {
       fontSize: buttonStyles.fontSize,
+      color: theme.text,
     },
     outerCircle: {
       justifyContent: 'center',
@@ -26,7 +27,7 @@ export const createStyles: CreateStyles = (theme) => {
 
       borderWidth: 4,
       borderRadius: outerCircleBoxSize / 2,
-      borderColor: theme.placeholder,
+      borderColor: theme.primary,
 
       marginRight: 10,
     },
@@ -35,9 +36,9 @@ export const createStyles: CreateStyles = (theme) => {
       height: innerCircleBoxSize,
 
       borderRadius: innerCircleBoxSize / 2,
-      borderColor: theme.placeholder,
+      borderColor: theme.primary,
 
-      backgroundColor: theme.placeholder,
+      backgroundColor: theme.primary,
     },
   });
 
