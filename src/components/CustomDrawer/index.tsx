@@ -14,31 +14,37 @@ import { SettingsIcon } from '../Icons/SettingsIcon';
 import { Warning } from '../Warning';
 import { Button } from '../Buttons/Button';
 import { CustomDrawerItem } from './DrawerItem';
+import { useTranslation } from 'react-i18next';
 
 export const CustomDrawer = ({ navigation }: DrawerContentComponentProps) => {
   const styles = useStyles(createStyles);
+  const { t } = useTranslation('drawer');
 
   return (
     <DrawerContentScrollView contentContainerStyle={styles.drawerContainer}>
       <View>
         <CustomDrawerItem
           icon={SettingsIcon}
-          label="Settings"
+          label={t('settings')}
           onPress={() => navigation.navigate(DrawerRoutes.SETTINGS)}
         />
         <CustomDrawerItem
           icon={HelpIcon}
-          label="Help"
+          label={t('help')}
           onPress={() => navigation.navigate(DrawerRoutes.HELP)}
         />
-        <CustomDrawerItem icon={InfoIcon} label="About" onPress={() => {}} />
+        <CustomDrawerItem
+          icon={InfoIcon}
+          label={t('about')}
+          onPress={() => {}}
+        />
       </View>
 
       <View style={styles.bottomSection}>
-        <Warning text="To save your jars, please, sign in!" />
+        <Warning text={t('save-jars-warning')} />
         <View style={styles.buttonContainer}>
           <Button
-            text="Sign In"
+            text={t('button-text')}
             variant={Variant.WARNING}
             onPress={() => navigation.navigate(DrawerRoutes.AUTH)}
           />
