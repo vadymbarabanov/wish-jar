@@ -6,7 +6,7 @@ export const createStyles: CreateStyles = (theme) => {
   const styles = StyleSheet.create({
     text: {
       color: theme.link,
-      fontSize: buttonStyles.fontSize,
+      fontSize: buttonStyles.fontSize * 0.85,
       textAlign: 'center',
     },
     linkButton: {
