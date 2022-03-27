@@ -6,6 +6,9 @@
     "save-jars-warning": "Щоб зберегти банки, будь ласка, авторизуйтесь!",
     "button-text": "Увійти"
   },
+  "header-titles": {
+    "settings": "Налаштування"
+  },
   "sign-in": {
     "title": "Вхід",
     "button-text": "Увійти",

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import navigationState from '../../mobx/NavigationState';
+import { CentrifyWrapper } from '../../components/CentrifyWrapper';
+import { Title } from '../../components/Title';
 import { Button } from '../../components/Buttons/Button';
 import { CodeInput } from '../../components/Inputs/CodeInput';
-import { Title } from '../../components/Title';
-import { CentrifyWrapper } from '../../components/CentrifyWrapper';
-import { useTranslation } from 'react-i18next';
 
 export const Verification = () => {
   const [value, setValue] = useState('');
@@ -13,7 +14,10 @@ export const Verification = () => {
     <CentrifyWrapper>
       <Title text={t('title')} />
       <CodeInput value={value} onChangeText={setValue} />
-      <Button text={t('button-text')} />
+      <Button
+        text={t('button-text')}
+        onPress={navigationState.verificationCallback!}
+      />
     </CentrifyWrapper>
   );
 };

@@ -1,17 +1,22 @@
 import React from 'react';
 import { KeyboardAvoidingView } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import {
+  AuthStackRoutes,
+  ResetPasswordStackRoutes,
+} from '../../navigation/routes';
+import { AuthScreenProps } from '../../navigation/AuthStack';
+import globalStyles from '../../styles/global';
+import { CentrifyWrapper } from '../../components/CentrifyWrapper';
+import { Title } from '../../components/Title';
 import { Button } from '../../components/Buttons/Button';
 import { LinkButton } from '../../components/Buttons/LinkButton';
 import { EmailInput } from '../../components/Inputs/EmailInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
-import { Title } from '../../components/Title';
-import { CentrifyWrapper } from '../../components/CentrifyWrapper';
-import { AuthScreenProps } from '../../navigation/AuthStack';
-import { AuthStackRoutes } from '../../navigation/routes';
-import globalStyles from '../../styles/global';
-import { useTranslation } from 'react-i18next';
 
-export const SignIn = ({ navigation }: AuthScreenProps) => {
+export const SignIn = ({
+  navigation,
+}: AuthScreenProps<AuthStackRoutes.SIGN_IN>) => {
   const { t } = useTranslation('sign-in');
 
   return (
@@ -27,7 +32,14 @@ export const SignIn = ({ navigation }: AuthScreenProps) => {
         text={t('no-account')}
       />
       <LinkButton
-        onPress={() => navigation.push(AuthStackRoutes.RESET_PASSWORD)}
+        onPress={() =>
+          navigation.push(AuthStackRoutes.RESET_PASSWORD, {
+            screen: ResetPasswordStackRoutes.RESET_PASSWORD,
+            params: {
+              goBack: () => navigation.navigate(AuthStackRoutes.SIGN_IN),
+            },
+          })
+        }
         text={t('no-password')}
       />
     </CentrifyWrapper>
