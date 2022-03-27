@@ -4,15 +4,21 @@ import { RadioButton } from '../../components/Buttons/RadioButton';
 import { CentrifyWrapper } from '../../components/CentrifyWrapper';
 import { LanguagesList } from '../../helpers/i18next/init';
 import globalStyles from '../../styles/global';
+import { observer } from 'mobx-react-lite';
+import loaderState from '../../mobx/LoaderState';
 
-export const Languages = () => {
+const Languages = () => {
+  const { loading, setLoading } = loaderState;
   const [activeRadio, setActiveRadio] = useState<LanguagesList>(
     i18n.language as LanguagesList
   );
 
   const onRadioPress = (lang: LanguagesList) => {
-    setActiveRadio(lang);
-    i18n.changeLanguage(lang);
+    setLoading(true);
+    i18n.changeLanguage(lang, () => {
+      setLoading(false);
+      setActiveRadio(lang);
+    });
   };
 
   return (
@@ -20,6 +26,7 @@ export const Languages = () => {
       <RadioButton
         wrapperStyle={globalStyles.marginVertical}
         label="Українська"
+        disabled={loading}
         active={activeRadio === LanguagesList.UA}
         onPress={() => {
           onRadioPress(LanguagesList.UA);
@@ -28,6 +35,7 @@ export const Languages = () => {
       <RadioButton
         wrapperStyle={globalStyles.marginVertical}
         label="English"
+        disabled={loading}
         active={activeRadio === LanguagesList.EN}
         onPress={() => {
           onRadioPress(LanguagesList.EN);
@@ -41,3 +49,5 @@ export const Languages = () => {
     </CentrifyWrapper>
   );
 };
+
+export default observer(Languages);

@@ -1,5 +1,3 @@
-import { StyleProp } from 'react-native';
-
 export enum Variant {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
@@ -15,7 +13,4 @@ export enum Theme {
 
 export type Palette = Record<string, string>;
 
-export type CreateStyles = (
-  theme: Palette,
-  variant?: Variant
-) => Record<string, StyleProp<any>>;
+export type CreateStyles = (theme: Palette, variant?: Variant) => any;

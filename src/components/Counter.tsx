@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { counter } from '../mobx/Counter';
 import { Variant } from '../types/Styles';
@@ -16,6 +16,7 @@ import { AddIcon } from './Icons/AddIcon';
 import { RemoveIcon } from './Icons/RemoveIcon';
 import { EditIcon } from './Icons/EditIcon';
 import { CheckIcon } from './Icons/CheckIcon';
+import loaderState from '../mobx/LoaderState';
 
 const Counter = () => {
   const { toggleTheme } = useTheme();
@@ -34,8 +35,19 @@ const Counter = () => {
     showSuccessToast();
   };
 
+  const onGoLoadingPress = () => {
+    loaderState.setLoading(true);
+    setTimeout(() => loaderState.setLoading(false), 2000);
+  };
+
   return (
     <ScrollView>
+      <Button
+        text="Go loading"
+        variant={Variant.SECONDARY}
+        onPress={onGoLoadingPress}
+      />
+
       <RadioButton
         label="Radio 1"
         active={radio === 1}
@@ -74,11 +86,15 @@ const Counter = () => {
       <IconButton icon={<EditIcon color="red" />} />
       <IconButton
         outlined
-        containerStyles={{ backgroundColor: 'yellow', borderColor: 'blue' }}
+        containerStyles={styles.customWrapper}
         icon={<AddIcon color="red" />}
       />
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  customWrapper: { backgroundColor: 'yellow', borderColor: 'blue' },
+});
 
 export default observer(Counter);

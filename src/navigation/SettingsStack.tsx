@@ -5,7 +5,7 @@ import { SettingsStackRoutes } from './routes';
 import { NewPassword } from '../screens/NewPassword';
 import { OldPassword } from '../screens/OldPassword';
 import { Settings } from '../screens/Settings';
-import { Languages } from '../screens/Settings/Languages';
+import Languages from '../screens/Settings/Languages';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { useTranslation } from 'react-i18next';
 import {
