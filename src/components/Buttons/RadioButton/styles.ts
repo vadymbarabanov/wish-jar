@@ -36,7 +36,6 @@ export const createStyles: CreateStyles = (theme) => {
       height: innerCircleBoxSize,
 
       borderRadius: innerCircleBoxSize / 2,
-      borderColor: theme.primary,
 
       backgroundColor: theme.primary,
     },
