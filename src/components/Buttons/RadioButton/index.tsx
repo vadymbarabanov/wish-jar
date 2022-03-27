@@ -27,7 +27,7 @@ export const RadioButton = ({
   return (
     <View style={wrapperStyle}>
       <TouchableWithoutFeedback {...rest}>
-        <View style={[styles.wrapper]}>
+        <View style={styles.wrapper}>
           <View style={styles.outerCircle}>
             {active && <View style={styles.innerCircle} />}
           </View>
