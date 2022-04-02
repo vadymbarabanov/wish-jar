@@ -5,20 +5,23 @@ import { CentrifyWrapper } from '../../components/CentrifyWrapper';
 import { SettingsButton } from '../../components/Buttons/SettingsButton';
 import { KeyIcon } from '../../components/Icons/KeyIcon';
 import { LanguageIcon } from '../../components/Icons/LanguageIcon';
+import { useTranslation } from 'react-i18next';
 
 export const Settings = ({
   navigation,
 }: SettingsScreenProps<SettingsStackRoutes.SETTINGS>) => {
+  const { t } = useTranslation('settings');
+
   return (
     <CentrifyWrapper>
       <SettingsButton
         icon={LanguageIcon}
-        text="Language"
+        text={t('language')}
         onPress={() => navigation.navigate(SettingsStackRoutes.LANGUAGES)}
       />
       <SettingsButton
         icon={KeyIcon}
-        text="Password"
+        text={t('change-password')}
         onPress={() => navigation.navigate(SettingsStackRoutes.OLD_PASSSWORD)}
       />
     </CentrifyWrapper>

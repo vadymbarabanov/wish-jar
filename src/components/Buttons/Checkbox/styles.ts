@@ -13,6 +13,7 @@ export const createStyles = (theme: Palette) => {
     },
     text: {
       fontSize: buttonStyles.fontSize,
+      color: theme.text,
     },
     square: {
       alignItems: 'center',

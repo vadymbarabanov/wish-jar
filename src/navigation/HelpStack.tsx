@@ -13,7 +13,7 @@ export const HelpStack = () => {
       screenOptions={{ animationTypeForReplace: 'pop', gestureEnabled: false }}
     >
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={HelpStackRoutes.HELP}
         component={Help}
       />

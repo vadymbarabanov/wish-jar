@@ -1,4 +1,9 @@
 {
+  "save-jars-modal": {
+    "title": "Щоб зберегти банки, будь ласка, авторизуйтесь!",
+    "not-show": "Не показувати знову",
+    "sign-in": "Увійти"
+  },
   "drawer": {
     "help": "Допомога",
     "settings": "Налаштування",
@@ -7,7 +12,13 @@
     "button-text": "Увійти"
   },
   "header-titles": {
-    "settings": "Налаштування"
+    "settings": "Налаштування",
+    "language": "Мова",
+    "change-password": "Змінити пароль"
+  },
+  "settings": {
+    "language": "Мова",
+    "change-password": "Змінити пароль"
   },
   "sign-in": {
     "title": "Вхід",

@@ -2,11 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   iconButton: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'flex-start',
 
-    width: 50,
-    height: 50,
+    padding: 8,
   },
   outline: {
     borderWidth: 2,

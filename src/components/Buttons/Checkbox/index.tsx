@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  Text,
-  TouchableWithoutFeedback,
-  TouchableWithoutFeedbackProps,
-  View,
-} from 'react-native';
+import { Pressable, PressableProps, Text, View } from 'react-native';
 import { useStyles } from '../../../helpers/hooks/useStyles';
 import { createStyles } from './styles';
 
-interface CheckboxProps extends TouchableWithoutFeedbackProps {
+interface CheckboxProps extends PressableProps {
   label: string;
   active?: boolean;
 }
@@ -17,7 +12,7 @@ export const Checkbox = ({ label, active, ...rest }: CheckboxProps) => {
   const styles = useStyles(createStyles);
 
   return (
-    <TouchableWithoutFeedback {...rest}>
+    <Pressable {...rest}>
       <View style={styles.wrapper}>
         <View style={styles.square}>
           {active && (
@@ -29,6 +24,6 @@ export const Checkbox = ({ label, active, ...rest }: CheckboxProps) => {
         </View>
         <Text style={styles.text}>{label}</Text>
       </View>
-    </TouchableWithoutFeedback>
+    </Pressable>
   );
 };

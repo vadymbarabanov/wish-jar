@@ -24,7 +24,7 @@ const Languages = () => {
   return (
     <CentrifyWrapper>
       <RadioButton
-        wrapperStyle={globalStyles.marginVertical}
+        style={globalStyles.marginVertical}
         label="Українська"
         disabled={loading}
         active={activeRadio === LanguagesList.UA}
@@ -33,7 +33,7 @@ const Languages = () => {
         }}
       />
       <RadioButton
-        wrapperStyle={globalStyles.marginVertical}
+        style={globalStyles.marginVertical}
         label="English"
         disabled={loading}
         active={activeRadio === LanguagesList.EN}
@@ -42,7 +42,7 @@ const Languages = () => {
         }}
       />
       <RadioButton
-        wrapperStyle={globalStyles.marginVertical}
+        style={globalStyles.marginVertical}
         label="Русский"
         onPress={() => console.log('Русский корабль, иди нахуй!')}
       />

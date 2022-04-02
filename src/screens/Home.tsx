@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar } from 'react-native';
 import Counter from '../components/Counter';
 import { useTheme } from '../helpers/hooks/useTheme';
 
-export const Home = () => {
+export const Home = ({ navigation }: any) => {
   const { theme } = useTheme();
 
   const wrapperStyle = {
@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <SafeAreaView style={wrapperStyle}>
       <StatusBar barStyle="light-content" backgroundColor={theme.primary} />
-      <Counter />
+      <Counter navigation={navigation} />
     </SafeAreaView>
   );
 };
