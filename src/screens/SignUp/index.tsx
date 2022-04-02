@@ -1,18 +1,28 @@
 import React from 'react';
 import { KeyboardAvoidingView } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import navigationState from '../../mobx/NavigationState';
+import { AuthStackRoutes } from '../../navigation/routes';
+import { AuthScreenProps } from '../../navigation/AuthStack';
+import globalStyles from '../../styles/global';
+import { CentrifyWrapper } from '../../components/CentrifyWrapper';
+import { Title } from '../../components/Title';
 import { Button } from '../../components/Buttons/Button';
 import { LinkButton } from '../../components/Buttons/LinkButton';
 import { EmailInput } from '../../components/Inputs/EmailInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
-import { Title } from '../../components/Title';
-import { CentrifyWrapper } from '../../components/CentrifyWrapper';
-import { AuthScreenProps } from '../../navigation/AuthStack';
-import { AuthStackRoutes } from '../../navigation/routes';
-import globalStyles from '../../styles/global';
-import { useTranslation } from 'react-i18next';
 
-export const SignUp = ({ navigation }: AuthScreenProps) => {
+export const SignUp = ({
+  navigation,
+}: AuthScreenProps<AuthStackRoutes.SIGN_UP>) => {
   const { t } = useTranslation(['sign-up', 'common']);
+
+  const handleSignUp = () => {
+    navigationState.setVerificationCallback(() =>
+      navigation.navigate(AuthStackRoutes.HOME)
+    );
+    navigation.push(AuthStackRoutes.VERIFICATION);
+  };
 
   return (
     <CentrifyWrapper>
@@ -24,7 +34,11 @@ export const SignUp = ({ navigation }: AuthScreenProps) => {
           style={globalStyles.marginVertical}
           label={t('common:confirm-password')}
         />
-        <Button style={globalStyles.marginVertical} text={t('button-text')} />
+        <Button
+          style={globalStyles.marginVertical}
+          text={t('button-text')}
+          onPress={handleSignUp}
+        />
       </KeyboardAvoidingView>
       <LinkButton
         onPress={() => navigation.navigate(AuthStackRoutes.SIGN_IN)}

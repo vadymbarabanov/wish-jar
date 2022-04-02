@@ -1,12 +1,26 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { ParamListBase } from '@react-navigation/native';
+import {
+  createStackNavigator,
+  StackScreenProps,
+} from '@react-navigation/stack';
 import { getHeaderOptions } from '../helpers/navigation/getHeaderOptions';
 import { ResetPasswordStackRoutes } from './routes';
 import { NewPassword } from '../screens/NewPassword';
 import { ResetPassword } from '../screens/ResetPassword';
 import { Verification } from '../screens/Verification';
 
-const Stack = createStackNavigator();
+export interface ResetPasswordStackParams extends ParamListBase {
+  [ResetPasswordStackRoutes.NEW_PASSSWORD]: undefined;
+  [ResetPasswordStackRoutes.RESET_PASSWORD]: undefined;
+  [ResetPasswordStackRoutes.VERIFICATION]: undefined;
+}
+
+export type ResetPasswordScreenProps<
+  ScreenType extends ResetPasswordStackRoutes
+> = StackScreenProps<ResetPasswordStackParams, ScreenType>;
+
+const Stack = createStackNavigator<ResetPasswordStackParams>();
 
 export const ResetPasswordStack = () => {
   return (

@@ -8,11 +8,11 @@ const outerCircleBoxSize = 30;
 export const createStyles: CreateStyles = (theme) => {
   const styles = StyleSheet.create({
     wrapper: {
-      alignSelf: 'flex-start',
       flexDirection: 'row',
       alignItems: 'center',
 
       marginVertical: buttonStyles.marginVertical,
+      paddingVertical: 5,
     },
     text: {
       fontSize: buttonStyles.fontSize,

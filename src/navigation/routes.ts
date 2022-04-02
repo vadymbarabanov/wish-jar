@@ -10,6 +10,7 @@ export enum AuthStackRoutes {
   SIGN_UP = 'signUp',
   VERIFICATION = 'verification',
   RESET_PASSWORD = 'resetPasswordStack',
+  HOME = 'mainStack',
 }
 
 export enum MainStackRoutes {
@@ -26,11 +27,20 @@ export enum ResetPasswordStackRoutes {
 
 export enum SettingsStackRoutes {
   SETTINGS = 'settings',
-  LANGUAGE = 'language',
+  LANGUAGES = 'languages',
   OLD_PASSSWORD = 'oldPassword',
   NEW_PASSSWORD = 'newPassword',
+  RESET_PASSWORD = 'resetPasswordStack',
 }
 
 export enum HelpStackRoutes {
   HELP = 'help',
+}
+
+export enum Stacks {
+  RESET_PASSWORD = 'resetPassword',
+  AUTH = 'auth',
+  SETTINGS = 'settings',
+  HELP = 'help',
+  MAIN = 'main',
 }

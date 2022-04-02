@@ -1,9 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import navigationState from '../../mobx/NavigationState';
+import globalStyles from '../../styles/global';
+import { CentrifyWrapper } from '../../components/CentrifyWrapper';
 import { Button } from '../../components/Buttons/Button';
 import { PasswordInput } from '../../components/Inputs/PasswordInput';
-import { CentrifyWrapper } from '../../components/CentrifyWrapper';
-import globalStyles from '../../styles/global';
-import { useTranslation } from 'react-i18next';
 
 export const NewPassword = () => {
   const { t } = useTranslation(['new-password', 'common']);
@@ -15,7 +16,10 @@ export const NewPassword = () => {
         style={globalStyles.marginVertical}
         label={t('common:confirm-password')}
       />
-      <Button text={t('button-text')} />
+      <Button
+        text={t('button-text')}
+        onPress={navigationState.newPasswordCallback!}
+      />
     </CentrifyWrapper>
   );
 };

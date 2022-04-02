@@ -6,6 +6,9 @@
     "save-jars-warning": "To save your jars, please, sign in!",
     "button-text": "Sign In"
   },
+  "header-titles": {
+    "settings": "Settings"
+  },
   "sign-in": {
     "title": "Sign in",
     "button-text": "Sign In",
