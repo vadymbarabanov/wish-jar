@@ -17,6 +17,7 @@ export enum MainStackRoutes {
   HOME = 'home',
   JAR = 'jar',
   WISH_LIST = 'wishList',
+  AUTH = 'authStack',
 }
 
 export enum ResetPasswordStackRoutes {

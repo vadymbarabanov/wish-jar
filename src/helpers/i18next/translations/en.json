@@ -1,4 +1,9 @@
 {
+  "save-jars-modal": {
+    "title": "To save your jars, please, sign in!",
+    "not-show": "Don't show again",
+    "sign-in": "Sign in"
+  },
   "drawer": {
     "help": "Help",
     "settings": "Settings",
@@ -7,7 +12,13 @@
     "button-text": "Sign In"
   },
   "header-titles": {
-    "settings": "Settings"
+    "settings": "Settings",
+    "language": "Language",
+    "change-password": "Change Password"
+  },
+  "settings": {
+    "language": "Language",
+    "change-password": "Change Password"
   },
   "sign-in": {
     "title": "Sign in",

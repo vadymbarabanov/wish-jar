@@ -13,10 +13,13 @@ export const DrawerStack = () => {
   return (
     <Drawer.Navigator
       initialRouteName={DrawerRoutes.HOME}
-      screenOptions={{ headerTitle: '' }}
       drawerContent={(props) => <CustomDrawer {...props} />}
     >
-      <Drawer.Screen name={DrawerRoutes.HOME} component={MainStack} />
+      <Drawer.Screen
+        name={DrawerRoutes.HOME}
+        options={{ headerShown: false }}
+        component={MainStack}
+      />
       <Drawer.Screen
         name={DrawerRoutes.HELP}
         options={{ headerShown: false }}

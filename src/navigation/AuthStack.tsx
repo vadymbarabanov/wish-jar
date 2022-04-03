@@ -32,17 +32,17 @@ export const AuthStack = () => {
       screenOptions={{ animationTypeForReplace: 'pop', gestureEnabled: false }}
     >
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={AuthStackRoutes.SIGN_IN}
         component={SignIn}
       />
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={AuthStackRoutes.SIGN_UP}
         component={SignUp}
       />
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={AuthStackRoutes.VERIFICATION}
         component={Verification}
       />

@@ -17,12 +17,15 @@ import { RemoveIcon } from './Icons/RemoveIcon';
 import { EditIcon } from './Icons/EditIcon';
 import { CheckIcon } from './Icons/CheckIcon';
 import loaderState from '../mobx/LoaderState';
+import { SaveJarsModal } from './Modals/SaveJarsModal';
+import { MainStackRoutes } from '../navigation/routes';
 
-const Counter = () => {
+const Counter = ({ navigation }: { navigation: any }) => {
   const { toggleTheme } = useTheme();
 
   const [checkbox, setCheckbox] = useState<number[]>([]);
   const [radio, setRadio] = useState<number>();
+  const [visible, setVisible] = useState(false);
 
   const { count, increase, decrease } = counter;
 
@@ -42,6 +45,17 @@ const Counter = () => {
 
   return (
     <ScrollView>
+      <Button
+        text="Open"
+        variant={Variant.SECONDARY}
+        onPress={() => setVisible(true)}
+      />
+      <SaveJarsModal
+        onSignInPress={() => navigation.navigate(MainStackRoutes.AUTH)}
+        visible={visible}
+        setVisible={setVisible}
+      />
+
       <Button
         text="Go loading"
         variant={Variant.SECONDARY}

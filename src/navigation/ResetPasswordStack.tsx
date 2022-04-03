@@ -26,17 +26,17 @@ export const ResetPasswordStack = () => {
   return (
     <Stack.Navigator initialRouteName={ResetPasswordStackRoutes.RESET_PASSWORD}>
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={ResetPasswordStackRoutes.RESET_PASSWORD}
         component={ResetPassword}
       />
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={ResetPasswordStackRoutes.VERIFICATION}
         component={Verification}
       />
       <Stack.Screen
-        options={({ navigation }) => ({ ...getHeaderOptions(navigation) })}
+        options={({ navigation }) => getHeaderOptions(navigation)}
         name={ResetPasswordStackRoutes.NEW_PASSSWORD}
         component={NewPassword}
       />
