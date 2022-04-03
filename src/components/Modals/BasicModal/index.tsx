@@ -11,16 +11,18 @@ export interface ModalProps extends ViewProps {
 export const BasicModal = ({ children, visible, setVisible }: ModalProps) => {
   const styles = useStyles(createStyles);
 
+  const handleClose = () => {
+    setVisible(false);
+  };
+
   return (
     <Modal
       animationType="fade"
       transparent={true}
       visible={visible}
-      onRequestClose={() => {
-        setVisible(!visible);
-      }}
+      onRequestClose={handleClose}
     >
-      <Pressable style={styles.wrapper} onPress={() => setVisible(false)}>
+      <Pressable style={styles.wrapper} onPress={handleClose}>
         {children}
       </Pressable>
     </Modal>

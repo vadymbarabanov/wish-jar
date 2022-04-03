@@ -4,9 +4,9 @@ import { CreateStyles } from '../../../types/Styles';
 export const createStyles: CreateStyles = (theme) => {
   const styles = StyleSheet.create({
     title: {
-      textAlign: 'center',
       fontSize: 24,
       color: theme.text,
+      textAlign: 'center',
     },
     checkbox: {
       marginVertical: 16,

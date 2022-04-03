@@ -18,6 +18,11 @@ export const SaveJarsModal = ({
   const { t } = useTranslation('save-jars-modal');
   const [active, setActive] = useState(false);
 
+  const handleSignInPress = () => {
+    setVisible(false);
+    onSignInPress();
+  };
+
   return (
     <BasicModal visible={visible} setVisible={setVisible}>
       <ContentWrapper setVisible={setVisible}>
@@ -31,10 +36,7 @@ export const SaveJarsModal = ({
         <Button
           variant={Variant.PRIMARY}
           text={t('sign-in')}
-          onPress={() => {
-            setVisible(false);
-            onSignInPress();
-          }}
+          onPress={handleSignInPress}
         />
       </ContentWrapper>
     </BasicModal>
