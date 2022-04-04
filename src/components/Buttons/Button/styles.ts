@@ -3,7 +3,7 @@ import { CreateStyles } from '../../../types/Styles';
 import buttonStyles from '../styles';
 
 export const createStyles: CreateStyles = (theme, variant) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     button: {
       marginVertical: buttonStyles.marginVertical,
       padding: buttonStyles.padding,
@@ -20,6 +20,4 @@ export const createStyles: CreateStyles = (theme, variant) => {
       backgroundColor: theme.disabled,
     },
   });
-
-  return styles;
 };

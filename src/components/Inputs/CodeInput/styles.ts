@@ -4,7 +4,7 @@ import { CreateStyles } from '../../../types/Styles';
 // Be careful when change styles related to react-native-confirmation-code-field
 // They can overlap each other
 export const createStyles: CreateStyles = () => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     root: {
       minHeight: 300,
 
@@ -41,6 +41,4 @@ export const createStyles: CreateStyles = () => {
       borderBottomColor: '#007AFF',
     },
   });
-
-  return styles;
 };

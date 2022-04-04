@@ -4,12 +4,20 @@ import { CreateStyles } from '../../../types/Styles';
 export const createStyles: CreateStyles = (theme) => {
   return StyleSheet.create({
     title: {
-      fontSize: 24,
+      fontSize: 22,
       color: theme.text,
       textAlign: 'center',
     },
-    checkbox: {
-      marginVertical: 16,
+    description: {
+      marginVertical: 20,
+
+      fontSize: 18,
+      color: theme.text,
+      textAlign: 'center',
+    },
+    version: {
+      color: 'gray',
+      textAlign: 'center',
     },
   });
 };

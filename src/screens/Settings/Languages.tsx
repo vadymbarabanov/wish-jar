@@ -41,11 +41,6 @@ const Languages = () => {
           onRadioPress(LanguagesList.EN);
         }}
       />
-      <RadioButton
-        style={globalStyles.marginVertical}
-        label="Русский"
-        onPress={() => console.log('Русский корабль, иди нахуй!')}
-      />
     </CentrifyWrapper>
   );
 };

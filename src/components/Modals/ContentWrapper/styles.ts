@@ -3,7 +3,7 @@ import { DEVICE_WIDTH } from '../../../constants/device';
 import { CreateStyles } from '../../../types/Styles';
 
 export const createStyles: CreateStyles = () => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     wrapper: {
       position: 'relative',
 
@@ -20,6 +20,4 @@ export const createStyles: CreateStyles = () => {
       right: 0,
     },
   });
-
-  return styles;
 };

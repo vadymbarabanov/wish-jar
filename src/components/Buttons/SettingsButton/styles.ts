@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../../types/Styles';
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     button: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -21,6 +21,4 @@ export const createStyles: CreateStyles = (theme) => {
       color: theme.primary,
     },
   });
-
-  return styles;
 };

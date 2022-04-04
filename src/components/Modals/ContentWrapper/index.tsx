@@ -7,21 +7,25 @@ import { createStyles } from './styles';
 
 interface ContentWrapperProps extends PressableProps {
   setVisible: (visible: boolean) => void;
+  closeButton?: boolean;
 }
 
 export const ContentWrapper = ({
   children,
   setVisible,
+  closeButton = true,
 }: ContentWrapperProps) => {
   const styles = useStyles(createStyles);
 
   return (
     <Pressable style={styles.wrapper}>
-      <IconButton
-        onPress={() => setVisible(false)}
-        containerStyles={styles.close}
-        icon={<CloseIcon />}
-      />
+      {closeButton && (
+        <IconButton
+          onPress={() => setVisible(false)}
+          containerStyles={styles.close}
+          icon={<CloseIcon />}
+        />
+      )}
       {children}
     </Pressable>
   );
