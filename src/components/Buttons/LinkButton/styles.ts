@@ -3,7 +3,7 @@ import { CreateStyles } from '../../../types/Styles';
 import buttonStyles from '../styles';
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     text: {
       color: theme.link,
       fontSize: buttonStyles.fontSize * 0.85,
@@ -15,6 +15,4 @@ export const createStyles: CreateStyles = (theme) => {
       marginVertical: buttonStyles.marginVertical,
     },
   });
-
-  return styles;
 };

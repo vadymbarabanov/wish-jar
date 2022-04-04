@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../types/Styles';
 
 export const createStyles: CreateStyles = () => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     outerWrapper: {
       position: 'relative',
 
@@ -20,6 +20,4 @@ export const createStyles: CreateStyles = () => {
       backgroundColor: '#ffffff60',
     },
   });
-
-  return styles;
 };

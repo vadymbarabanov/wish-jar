@@ -6,7 +6,7 @@ const innerCircleBoxSize = 15;
 const outerCircleBoxSize = 30;
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     wrapper: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -40,6 +40,4 @@ export const createStyles: CreateStyles = (theme) => {
       backgroundColor: theme.primary,
     },
   });
-
-  return styles;
 };

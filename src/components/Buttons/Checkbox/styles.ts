@@ -3,7 +3,7 @@ import { Palette } from '../../../types/Styles';
 import buttonStyles from '../styles';
 
 export const createStyles = (theme: Palette) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     wrapper: {
       flexDirection: 'row',
       alignSelf: 'flex-start',
@@ -58,6 +58,4 @@ export const createStyles = (theme: Palette) => {
       backgroundColor: theme.placeholder,
     },
   });
-
-  return styles;
 };

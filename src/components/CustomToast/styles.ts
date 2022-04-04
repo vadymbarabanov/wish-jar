@@ -3,7 +3,7 @@ import { DEVICE_WIDTH } from '../../constants/device';
 import { CreateStyles } from '../../types/Styles';
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     container: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -33,6 +33,4 @@ export const createStyles: CreateStyles = (theme) => {
       fontSize: 16,
     },
   });
-
-  return styles;
 };

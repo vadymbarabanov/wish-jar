@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../types/Styles';
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     drawerContainer: {
       flex: 1,
       justifyContent: 'space-between',
@@ -33,5 +33,4 @@ export const createStyles: CreateStyles = (theme) => {
       margin: 20,
     },
   });
-  return styles;
 };

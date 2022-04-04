@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../../types/Styles';
 
 export const createStyles: CreateStyles = (theme) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     title: {
       fontSize: 24,
       color: theme.text,
@@ -12,6 +12,4 @@ export const createStyles: CreateStyles = (theme) => {
       marginVertical: 16,
     },
   });
-
-  return styles;
 };

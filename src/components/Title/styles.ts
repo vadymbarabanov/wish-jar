@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { CreateStyles, Palette } from '../../types/Styles';
 
 export const createStyles: CreateStyles = (theme: Palette) => {
-  const styles = StyleSheet.create({
+  return StyleSheet.create({
     text: {
       fontSize: 35,
       fontWeight: 'bold',
@@ -10,6 +10,4 @@ export const createStyles: CreateStyles = (theme: Palette) => {
       textAlign: 'center',
     },
   });
-
-  return styles;
 };
