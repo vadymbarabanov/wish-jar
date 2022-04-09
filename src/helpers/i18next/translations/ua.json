@@ -9,6 +9,10 @@
     "not-show": "Не показувати знову",
     "sign-in": "Увійти"
   },
+  "wish-modal": {
+    "title": "Заголовок...",
+    "description": "Опис..."
+  },
   "drawer": {
     "help": "Допомога",
     "settings": "Налаштування",

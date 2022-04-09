@@ -6,14 +6,14 @@ import { CloseIcon } from '../../Icons/CloseIcon';
 import { createStyles } from './styles';
 
 interface ContentWrapperProps extends PressableProps {
-  setVisible: (visible: boolean) => void;
   closeButton?: boolean;
+  closeModal: () => void;
 }
 
 export const ContentWrapper = ({
   children,
-  setVisible,
   closeButton = true,
+  closeModal,
 }: ContentWrapperProps) => {
   const styles = useStyles(createStyles);
 
@@ -21,7 +21,7 @@ export const ContentWrapper = ({
     <Pressable style={styles.wrapper}>
       {closeButton && (
         <IconButton
-          onPress={() => setVisible(false)}
+          onPress={closeModal}
           containerStyles={styles.close}
           icon={<CloseIcon />}
         />

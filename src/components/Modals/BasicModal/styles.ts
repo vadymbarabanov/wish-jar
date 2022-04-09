@@ -8,7 +8,7 @@ export const createStyles: CreateStyles = () => {
       justifyContent: 'center',
       alignItems: 'center',
 
-      backgroundColor: '#00000060',
+      backgroundColor: '#00000080',
     },
   });
 };

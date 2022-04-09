@@ -1,12 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { useStyles } from '../../../helpers/hooks/useStyles';
-import { IconButton } from '../../Buttons/IconButton';
-import { CheckIcon } from '../../Icons/CheckIcon';
-import { CloseIcon } from '../../Icons/CloseIcon';
+import { createStyles } from './styles';
 import { BasicModal, ModalProps } from '../BasicModal';
 import { ContentWrapper } from '../ContentWrapper';
-import { createStyles } from './styles';
+import { CancelButton } from '../../Buttons/IconButton/CancelButton';
+import { CheckButton } from '../../Buttons/IconButton/CheckButton';
 
 interface ConfirmModalProps extends ModalProps {
   text: string;
@@ -28,20 +27,12 @@ export const ConfirmModal = ({
 
   return (
     <BasicModal visible={visible} setVisible={setVisible}>
-      <ContentWrapper closeButton={false} setVisible={setVisible}>
+      <ContentWrapper closeButton={false} closeModal={() => setVisible(false)}>
         <Text style={styles.text}>{text}</Text>
 
         <View style={styles.buttonsWrapper}>
-          <IconButton
-            icon={<CloseIcon color="white" />}
-            containerStyles={[styles.icon, styles.closeIcon]}
-            onPress={() => setVisible(false)}
-          />
-          <IconButton
-            icon={<CheckIcon color="white" />}
-            containerStyles={[styles.icon, styles.checkIcon]}
-            onPress={handleSubmit}
-          />
+          <CancelButton onPress={() => setVisible(false)} />
+          <CheckButton onPress={handleSubmit} />
         </View>
       </ContentWrapper>
     </BasicModal>
