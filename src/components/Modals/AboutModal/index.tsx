@@ -12,7 +12,7 @@ export const AboutModal = ({ visible, setVisible }: ModalProps) => {
 
   return (
     <BasicModal visible={visible} setVisible={setVisible}>
-      <ContentWrapper setVisible={setVisible}>
+      <ContentWrapper closeModal={() => setVisible(false)}>
         <Text style={styles.title}>{t('title')}</Text>
         <Text style={styles.description}>{t('description')}</Text>
         <Text style={styles.version}>{t('version')} 1.0.0</Text>

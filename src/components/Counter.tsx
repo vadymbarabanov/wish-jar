@@ -17,10 +17,15 @@ import { RemoveIcon } from './Icons/RemoveIcon';
 import { EditIcon } from './Icons/EditIcon';
 import { CheckIcon } from './Icons/CheckIcon';
 import loaderState from '../mobx/LoaderState';
-import { SaveJarsModal } from './Modals/SaveJarsModal';
-import { MainStackRoutes } from '../navigation/routes';
+// import { SaveJarsModal } from './Modals/SaveJarsModal';
+// import { MainStackRoutes } from '../navigation/routes';
+import { WishModal } from './Modals/WishModal';
+// import { CancelButton } from './Buttons/IconButton/CancelButton';
+// import { CheckButton } from './Buttons/IconButton/CheckButton';
+import { DeleteButton } from './Buttons/IconButton/DeleteButton';
 
-const Counter = ({ navigation }: { navigation: any }) => {
+// const Counter = ({ navigation }: { navigation: any }) => {
+const Counter = () => {
   const { toggleTheme } = useTheme();
 
   const [checkbox, setCheckbox] = useState<number[]>([]);
@@ -43,17 +48,30 @@ const Counter = ({ navigation }: { navigation: any }) => {
     setTimeout(() => loaderState.setLoading(false), 2000);
   };
 
+  // const Buttons = [
+  //   <CancelButton key="cancel" outlined onPress={() => setVisible(false)} />,
+  //   <CheckButton key="check" outlined onPress={() => setVisible(false)} />,
+  // ];
+
+  const Buttons = [
+    <DeleteButton key="cancel" outlined onPress={() => setVisible(false)} />,
+  ];
+
   return (
-    <ScrollView>
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      showsVerticalScrollIndicator={false}
+    >
       <Button
         text="Open"
         variant={Variant.SECONDARY}
         onPress={() => setVisible(true)}
       />
-      <SaveJarsModal
-        onSignInPress={() => navigation.navigate(MainStackRoutes.AUTH)}
+      <WishModal
+        Buttons={Buttons}
         visible={visible}
         setVisible={setVisible}
+        editable={Buttons.length > 1}
       />
 
       <Button

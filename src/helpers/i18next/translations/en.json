@@ -9,6 +9,10 @@
     "not-show": "Don't show again",
     "sign-in": "Sign in"
   },
+  "wish-modal": {
+    "title": "Add title...",
+    "description": "Add description..."
+  },
   "drawer": {
     "help": "Help",
     "settings": "Settings",

@@ -27,7 +27,7 @@ export const createStyles: CreateStyles = (theme) => {
 
       borderWidth: 4,
       borderRadius: outerCircleBoxSize / 2,
-      borderColor: theme.primary,
+      borderColor: theme.secondary,
 
       marginRight: 10,
     },
@@ -37,7 +37,7 @@ export const createStyles: CreateStyles = (theme) => {
 
       borderRadius: innerCircleBoxSize / 2,
 
-      backgroundColor: theme.primary,
+      backgroundColor: theme.secondary,
     },
   });
 };

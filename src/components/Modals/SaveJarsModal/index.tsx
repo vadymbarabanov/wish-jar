@@ -25,7 +25,7 @@ export const SaveJarsModal = ({
 
   return (
     <BasicModal visible={visible} setVisible={setVisible}>
-      <ContentWrapper setVisible={setVisible}>
+      <ContentWrapper closeModal={() => setVisible(false)}>
         <Text style={styles.title}>{t('title')}</Text>
         <Checkbox
           style={styles.checkbox}

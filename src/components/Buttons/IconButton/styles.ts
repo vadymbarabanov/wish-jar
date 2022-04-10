@@ -5,9 +5,10 @@ export const styles = StyleSheet.create({
     alignSelf: 'flex-start',
 
     padding: 8,
+
+    borderRadius: 10,
   },
   outline: {
     borderWidth: 2,
-    borderRadius: 10,
   },
 });
