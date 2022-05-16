@@ -24,6 +24,7 @@ export const MainStack = () => {
         options={({ navigation }) => getHeaderOptions(navigation)}
         name={MainStackRoutes.JAR}
         component={Jar}
+        initialParams={{ isNewelyAdded: false }}
       />
       <Stack.Screen
         options={({ navigation }) => getHeaderOptions(navigation)}
