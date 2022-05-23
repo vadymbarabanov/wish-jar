@@ -14,8 +14,6 @@ export const createStyles: CreateStyles = () => {
     wrapper: {
       flex: 1,
       justifyContent: 'center',
-
-      paddingHorizontal: WRAPPER_PADDING,
     },
     jarWrapper: {
       position: 'relative',
@@ -23,13 +21,14 @@ export const createStyles: CreateStyles = () => {
       alignItems: 'center',
 
       marginBottom: 48,
+      paddingHorizontal: WRAPPER_PADDING,
 
       borderBottomWidth: 32,
       borderColor: '#57412f',
     },
     labelWrapper: {
       position: 'absolute',
-      left: (DEVICE_WIDTH - WRAPPER_PADDING * 2) * 0.5,
+      left: DEVICE_WIDTH * 0.5,
       transform: [
         { translateX: -LABEL_WIDTH * 0.5 },
         { translateY: JAR_WIDTH * 0.75 },
@@ -59,6 +58,8 @@ export const createStyles: CreateStyles = () => {
       justifyContent: 'space-between',
 
       width: '100%',
+
+      paddingHorizontal: WRAPPER_PADDING,
     },
     btn: {
       width: DEVICE_WIDTH * 0.5 - 32,
