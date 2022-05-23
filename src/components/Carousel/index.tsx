@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import Carousel from 'react-native-reanimated-carousel';
+import ReanimatedCarousel from 'react-native-reanimated-carousel';
 import { useSharedValue } from 'react-native-reanimated';
 import { DEVICE_WIDTH } from '../../constants/device';
 import Pagination from './Pagination';
+import { styles } from './styles';
 
-const colors = [
+const mockData = [
   '#26292E',
   '#899F9C',
   '#B3C680',
@@ -14,32 +15,22 @@ const colors = [
   '#F1F1F1',
 ];
 
-const Index = () => {
+export const Carousel = () => {
   const progressValue = useSharedValue<number>(0);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        paddingBottom: 30,
-      }}
-    >
-      <Carousel
+    <View style={styles.outerWrapper}>
+      <ReanimatedCarousel
         loop={false}
         width={DEVICE_WIDTH}
-        style={{ flex: 1 }}
-        onProgressChange={(_, absoluteProgress) =>
-          (progressValue.value = absoluteProgress)
-        }
-        data={colors}
-        renderItem={({ index }: any) => <Text>{index}</Text>}
+        style={styles.innerWrapper}
+        onProgressChange={(_: any, absoluteProgress: number) => {
+          progressValue.value = absoluteProgress;
+        }}
+        data={mockData}
+        renderItem={({ index }: { index: number }) => <Text>{index}</Text>}
       />
-      {!!progressValue && (
-        <Pagination progressValue={progressValue} data={colors} />
-      )}
+      <Pagination progressValue={progressValue} data={mockData} />
     </View>
   );
 };
-
-export default Index;

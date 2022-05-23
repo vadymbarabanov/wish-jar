@@ -1,70 +1,23 @@
 import React from 'react';
 import { View } from 'react-native';
-import Animated, {
-  Extrapolate,
-  interpolate,
-  useAnimatedStyle,
-} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
+import { PaginationItem } from './PaginationItem';
+import { styles } from './styles';
 
-const PaginationItem: React.FC<{
-  index: number;
-  length: number;
-  animValue: Animated.SharedValue<number>;
-}> = ({ animValue, index, length }) => {
-  const width = 10;
-
-  const animStyle = useAnimatedStyle(() => {
-    let inputRange = [index - 1, index, index + 1];
-    let outputRange = [width, 2.5 * width, width];
-
-    if (index === 0 && animValue?.value > length - 1) {
-      inputRange = [length - 1, length, length + 1];
-    }
-
-    return {
-      width: interpolate(
-        animValue?.value,
-        inputRange,
-        outputRange,
-        Extrapolate.CLAMP
-      ),
-    };
-  }, [animValue, index, length]);
-
-  return (
-    <Animated.View
-      style={[
-        {
-          borderRadius: 5,
-          backgroundColor: 'white',
-          width,
-          height: width,
-        },
-        animStyle,
-      ]}
-    />
-  );
-};
+export type ProgressValue = Animated.SharedValue<number>;
 
 interface PaginationProps {
-  progressValue: any;
+  progressValue: ProgressValue;
   data: any[];
 }
 
 const Pagination = ({ progressValue, data }: PaginationProps) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: 100,
-        alignSelf: 'center',
-      }}
-    >
+    <View style={styles.pagination}>
       {data.map((_, index) => {
         return (
           <PaginationItem
-            animValue={progressValue}
+            progressValue={progressValue}
             index={index}
             key={index}
             length={data.length}
