@@ -2,9 +2,9 @@ import React from 'react';
 import Svg, { Circle, Line } from 'react-native-svg';
 import { IconProps } from '../../types/Icon';
 
-export const AddIcon = ({ color }: IconProps) => {
+export const AddIcon = ({ color, width = 30 }: IconProps) => {
   return (
-    <Svg width={30} height={30} viewBox="0 0 32 32">
+    <Svg width={width} height={width} viewBox="0 0 32 32">
       <Circle
         cx="16"
         cy="16"

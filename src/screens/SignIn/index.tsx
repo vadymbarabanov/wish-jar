@@ -35,9 +35,6 @@ export const SignIn = ({
         onPress={() =>
           navigation.push(AuthStackRoutes.RESET_PASSWORD, {
             screen: ResetPasswordStackRoutes.RESET_PASSWORD,
-            params: {
-              goBack: () => navigation.navigate(AuthStackRoutes.SIGN_IN),
-            },
           })
         }
         text={t('no-password')}
