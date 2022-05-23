@@ -4,6 +4,11 @@
     "description": "Made with love to make your wishes come true! 🌠",
     "version": "Version:"
   },
+  "jar": {
+    "add-wish": "Add wish",
+    "get-random-wish": "Get random",
+    "default-label": "My wishes"
+  },
   "save-jars-modal": {
     "title": "To save your jars, please, sign in!",
     "not-show": "Don't show again",
