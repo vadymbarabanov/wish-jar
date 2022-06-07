@@ -23,7 +23,7 @@ export const createStyles: CreateStyles = () => {
       marginBottom: 48,
       paddingHorizontal: WRAPPER_PADDING,
 
-      borderBottomWidth: 32,
+      borderBottomWidth: 40,
       borderColor: '#57412f',
     },
     labelWrapper: {
@@ -42,6 +42,8 @@ export const createStyles: CreateStyles = () => {
       borderWidth: 1,
       borderRadius: 8,
       borderColor: 'gray',
+
+      backgroundColor: '#eaeaea',
     },
     labelInput: {
       padding: 8,

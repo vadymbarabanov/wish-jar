@@ -6,8 +6,13 @@
   },
   "jar": {
     "add-wish": "Add wish",
+    "remove-wish": "Remove",
+    "put-back-wish": "Put back",
     "get-random-wish": "Get random",
     "default-label": "My wishes"
+  },
+  "wish-list": {
+    "confirmation": "Are you sure?"
   },
   "save-jars-modal": {
     "title": "To save your jars, please, sign in!",

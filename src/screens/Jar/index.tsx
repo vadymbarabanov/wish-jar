@@ -10,8 +10,8 @@ import { useStyles } from '../../helpers/hooks/useStyles';
 import { JarIcon } from '../../components/Icons/JarIcon';
 import { DEVICE_WIDTH } from '../../constants/device';
 import { createStyles } from './styles';
-import { Button } from '../../components/Buttons/Button';
 import { useTranslation } from 'react-i18next';
+import { ManageWishesModals } from './ManageWishesModals';
 
 export const JAR_WIDTH = DEVICE_WIDTH - 128;
 
@@ -70,10 +70,7 @@ export const Jar = ({ route }: JarProps) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.btnWrapper}>
-          <Button text={t('add-wish')} style={styles.btn} />
-          <Button text={t('get-random-wish')} style={styles.btn} />
-        </View>
+        <ManageWishesModals />
       </View>
     </TouchableWithoutFeedback>
   );

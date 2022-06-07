@@ -6,8 +6,13 @@
   },
   "jar": {
     "add-wish": "Додати бажання",
+    "remove-wish": "Видалити",
+    "put-back-wish": "Покласти назад",
     "get-random-wish": "Дістати випадкове",
     "default-label": "Мої бажання"
+  },
+  "wish-list": {
+    "confirmation": "Ви впевнені?"
   },
   "save-jars-modal": {
     "title": "Щоб зберегти банки, будь ласка, авторизуйтесь!",
