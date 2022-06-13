@@ -31,7 +31,6 @@ export const Home = ({ navigation }: any) => {
     <SafeAreaView style={styles.wrapper}>
       <StatusBar barStyle="light-content" backgroundColor={theme.primary} />
       <ScrollView
-        fadingEdgeLength={150}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.shelfContainer}
         overScrollMode="never"

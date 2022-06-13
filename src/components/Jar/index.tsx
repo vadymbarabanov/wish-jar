@@ -6,7 +6,7 @@ import { AddIcon } from '../Icons/AddIcon';
 import { JarIcon } from '../Icons/JarIcon';
 import { createStyles } from './styles';
 
-export const JAR_WIDTH = DEVICE_WIDTH * 0.5 - 48;
+export const JAR_WIDTH = Math.floor(DEVICE_WIDTH * 0.5 - 48);
 export const ADD_ICON_WIDTH = JAR_WIDTH * 0.5;
 
 type JarProps = {
