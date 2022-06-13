@@ -54,18 +54,5 @@ export const createStyles: CreateStyles = () => {
       color: 'black',
       lineHeight: LABEL_LINE_HEIGHT,
     },
-    btnWrapper: {
-      flexWrap: 'wrap',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-
-      width: '100%',
-
-      paddingHorizontal: WRAPPER_PADDING,
-    },
-    btn: {
-      width: DEVICE_WIDTH * 0.5 - 32,
-      minWidth: 120,
-    },
   });
 };

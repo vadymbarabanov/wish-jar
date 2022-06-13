@@ -11,7 +11,7 @@ import { JarIcon } from '../../components/Icons/JarIcon';
 import { DEVICE_WIDTH } from '../../constants/device';
 import { createStyles } from './styles';
 import { useTranslation } from 'react-i18next';
-import { ManageWishesModals } from './ManageWishesModals';
+import { WishModals } from './WishModals';
 
 export const JAR_WIDTH = DEVICE_WIDTH - 128;
 
@@ -70,7 +70,7 @@ export const Jar = ({ route }: JarProps) => {
             </TouchableOpacity>
           </View>
         </View>
-        <ManageWishesModals />
+        <WishModals />
       </View>
     </TouchableWithoutFeedback>
   );
