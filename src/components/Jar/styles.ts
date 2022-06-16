@@ -27,7 +27,9 @@ export const createStyles: CreateStyles = () => {
 
       padding: LABEL_PADDING,
 
+      borderWidth: 1,
       borderRadius: 8,
+      borderColor: 'gray',
 
       backgroundColor: '#eaeaea',
     },

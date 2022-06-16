@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { CreateStyles } from '../../types/Styles';
 
-export const createStyles: CreateStyles = (theme) => {
+export const createStyles: CreateStyles = () => {
   return StyleSheet.create({
     wrapper: {
       flex: 1,
-      backgroundColor: theme.primary,
     },
     shelfContainer: {
       paddingHorizontal: 16,
@@ -18,7 +17,7 @@ export const createStyles: CreateStyles = (theme) => {
       marginVertical: 16,
       paddingHorizontal: 16,
 
-      borderBottomWidth: 16,
+      borderBottomWidth: 24,
       borderRadius: 10,
       borderColor: '#57412f',
     },

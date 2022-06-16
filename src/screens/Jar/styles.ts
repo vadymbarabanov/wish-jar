@@ -14,8 +14,6 @@ export const createStyles: CreateStyles = () => {
     wrapper: {
       flex: 1,
       justifyContent: 'center',
-
-      paddingHorizontal: WRAPPER_PADDING,
     },
     jarWrapper: {
       position: 'relative',
@@ -23,13 +21,14 @@ export const createStyles: CreateStyles = () => {
       alignItems: 'center',
 
       marginBottom: 48,
+      paddingHorizontal: WRAPPER_PADDING,
 
-      borderBottomWidth: 32,
+      borderBottomWidth: 40,
       borderColor: '#57412f',
     },
     labelWrapper: {
       position: 'absolute',
-      left: (DEVICE_WIDTH - WRAPPER_PADDING * 2) * 0.5,
+      left: DEVICE_WIDTH * 0.5,
       transform: [
         { translateX: -LABEL_WIDTH * 0.5 },
         { translateY: JAR_WIDTH * 0.75 },
@@ -43,6 +42,8 @@ export const createStyles: CreateStyles = () => {
       borderWidth: 1,
       borderRadius: 8,
       borderColor: 'gray',
+
+      backgroundColor: '#eaeaea',
     },
     labelInput: {
       padding: 8,
@@ -52,17 +53,6 @@ export const createStyles: CreateStyles = () => {
       textAlign: 'center',
       color: 'black',
       lineHeight: LABEL_LINE_HEIGHT,
-    },
-    btnWrapper: {
-      flexWrap: 'wrap',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-
-      width: '100%',
-    },
-    btn: {
-      width: DEVICE_WIDTH * 0.5 - 32,
-      minWidth: 120,
     },
   });
 };

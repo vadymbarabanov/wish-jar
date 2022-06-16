@@ -10,22 +10,23 @@ import { useStyles } from '../../helpers/hooks/useStyles';
 import { JarIcon } from '../../components/Icons/JarIcon';
 import { DEVICE_WIDTH } from '../../constants/device';
 import { createStyles } from './styles';
-import { Button } from '../../components/Buttons/Button';
+import { useTranslation } from 'react-i18next';
+import { WishModals } from './WishModals';
 
 export const JAR_WIDTH = DEVICE_WIDTH - 128;
-const DEFAULT_LABEL = 'My wishes';
 
 interface JarProps {
   route: any;
 }
 
 export const Jar = ({ route }: JarProps) => {
+  const { t } = useTranslation('jar');
   const styles = useStyles(createStyles);
   const textInputRef = useRef<TextInput | null>();
   const { isNewelyAdded } = route.params;
   const [isNew, setIsNew] = useState(isNewelyAdded);
   const [editable, setEditable] = useState(isNewelyAdded);
-  const [value, setValue] = useState(DEFAULT_LABEL);
+  const [value, setValue] = useState(t('default-label') as string);
 
   // [React Native Love] selectTextOnFocus does not work with autoFocus
   useEffect(() => {
@@ -69,10 +70,7 @@ export const Jar = ({ route }: JarProps) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.btnWrapper}>
-          <Button text="Додати бажання" style={styles.btn} />
-          <Button text="Дістати бажання" style={styles.btn} />
-        </View>
+        <WishModals />
       </View>
     </TouchableWithoutFeedback>
   );

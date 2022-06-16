@@ -1,43 +1,42 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { TextInput, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from '../../../helpers/hooks/useStyles';
 import { createStyles } from './styles';
 import { BasicModal, ModalProps } from '../BasicModal';
 import { ContentWrapper } from '../ContentWrapper';
+import { Wish } from '../../../types/Wish';
 
 interface WishModalProps extends ModalProps {
+  wish: Wish;
+  setWish?: (wish: Wish) => void; // Optional because we need to show wish in read only mode
   editable?: boolean;
-  initialWish?: {
-    title: string;
-    description: string;
-  };
-  Buttons: ReactElement[];
+  buttons: ReactElement[];
 }
 
 const MAX_TITLE_LENGTH = 30;
 const MAX_DESCRIPTION_LENGTH = 140;
 
-const emptyWish = {
-  title: '',
-  description: '',
-};
-
 export const WishModal = ({
+  wish,
+  setWish,
   visible,
   setVisible,
   editable = false,
-  initialWish = emptyWish,
-  Buttons,
+  buttons,
   ...rest
 }: WishModalProps) => {
   const { t } = useTranslation('wish-modal');
   const styles = useStyles(createStyles);
-  const [wish, setWish] = useState(initialWish);
 
   const cancelChanges = () => {
-    setWish(initialWish);
     setVisible(false);
+  };
+
+  const handleChange = (value: Partial<Wish>) => {
+    if (setWish) {
+      setWish({ ...wish, ...value });
+    }
   };
 
   return (
@@ -48,7 +47,7 @@ export const WishModal = ({
           editable={editable}
           value={wish?.title || ''}
           placeholder={t('title')}
-          onChangeText={(title) => setWish({ ...wish, title })}
+          onChangeText={(title) => handleChange({ title })}
           style={styles.title}
           autoFocus={editable}
           maxLength={MAX_TITLE_LENGTH}
@@ -60,14 +59,14 @@ export const WishModal = ({
             editable={editable}
             value={wish?.description || ''}
             placeholder={t('description')}
-            onChangeText={(description) => setWish({ ...wish, description })}
+            onChangeText={(description) => handleChange({ description })}
             style={styles.description}
             maxLength={MAX_DESCRIPTION_LENGTH}
           />
         ) : null}
       </ContentWrapper>
 
-      <View style={styles.buttonsWrapper}>{Buttons}</View>
+      <View style={styles.buttonsWrapper}>{buttons}</View>
     </BasicModal>
   );
 };
