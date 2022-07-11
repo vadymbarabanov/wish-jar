@@ -1,6 +1,6 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
 
-export type GetOptions = (
-  navigation: any,
+export type GetOptions<T = { goBack: () => void }> = (
+  navigation: T,
   title?: string
 ) => StackNavigationOptions;

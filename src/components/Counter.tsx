@@ -70,7 +70,7 @@ const Counter = () => {
       <WishModal
         Buttons={Buttons}
         visible={visible}
-        setVisible={setVisible}
+        onDismiss={() => setVisible(false)}
         editable={Buttons.length > 1}
       />
 

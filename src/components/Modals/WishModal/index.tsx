@@ -13,6 +13,7 @@ interface WishModalProps extends ModalProps {
     description: string;
   };
   Buttons: ReactElement[];
+  onDismiss: () => void;
 }
 
 const MAX_TITLE_LENGTH = 30;
@@ -25,7 +26,7 @@ const emptyWish = {
 
 export const WishModal = ({
   visible,
-  setVisible,
+  onDismiss,
   editable = false,
   initialWish = emptyWish,
   Buttons,
@@ -37,11 +38,11 @@ export const WishModal = ({
 
   const cancelChanges = () => {
     setWish(initialWish);
-    setVisible(false);
+    onDismiss();
   };
 
   return (
-    <BasicModal visible={visible} setVisible={setVisible} {...rest}>
+    <BasicModal visible={visible} onDismiss={onDismiss} {...rest}>
       <ContentWrapper closeModal={cancelChanges} closeButton={false}>
         <TextInput
           multiline={true}

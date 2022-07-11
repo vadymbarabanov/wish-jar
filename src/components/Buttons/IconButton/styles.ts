@@ -11,4 +11,7 @@ export const styles = StyleSheet.create({
   outline: {
     borderWidth: 2,
   },
+  iconPadding: {
+    padding: 0,
+  },
 });

@@ -4,6 +4,9 @@
     "description": "Made with love to make your wishes come true! 🌠",
     "version": "Version:"
   },
+  "jar": {
+    "save-modal-title": "Save jar?"
+  },
   "save-jars-modal": {
     "title": "To save your jars, please, sign in!",
     "not-show": "Don't show again",
