@@ -5,24 +5,20 @@ import { createStyles } from './styles';
 
 export interface ModalProps extends ViewProps {
   visible: boolean;
-  setVisible: (visible: boolean) => void;
+  onDismiss: () => void;
 }
 
-export const BasicModal = ({ children, visible, setVisible }: ModalProps) => {
+export const BasicModal = ({ children, visible, onDismiss }: ModalProps) => {
   const styles = useStyles(createStyles);
-
-  const handleClose = () => {
-    setVisible(false);
-  };
 
   return (
     <Modal
       animationType="fade"
       transparent={true}
       visible={visible}
-      onRequestClose={handleClose}
+      onRequestClose={onDismiss}
     >
-      <Pressable style={styles.wrapper} onPress={handleClose}>
+      <Pressable style={styles.wrapper} onPress={onDismiss}>
         {children}
       </Pressable>
     </Modal>

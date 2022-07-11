@@ -10,29 +10,25 @@ import { CheckButton } from '../../Buttons/IconButton/CheckButton';
 interface ConfirmModalProps extends ModalProps {
   text: string;
   onSubmit: () => void;
+  onDismiss: () => void;
 }
 
 export const ConfirmModal = ({
   visible,
-  setVisible,
   text,
   onSubmit,
+  onDismiss,
 }: ConfirmModalProps) => {
   const styles = useStyles(createStyles);
 
-  const handleSubmit = () => {
-    onSubmit();
-    setVisible(false);
-  };
-
   return (
-    <BasicModal visible={visible} setVisible={setVisible}>
-      <ContentWrapper closeButton={false} closeModal={() => setVisible(false)}>
+    <BasicModal visible={visible} onDismiss={onDismiss}>
+      <ContentWrapper closeButton={false} closeModal={onDismiss}>
         <Text style={styles.text}>{text}</Text>
 
         <View style={styles.buttonsWrapper}>
-          <CancelButton onPress={() => setVisible(false)} />
-          <CheckButton onPress={handleSubmit} />
+          <CancelButton onPress={onDismiss} />
+          <CheckButton onPress={onSubmit} />
         </View>
       </ContentWrapper>
     </BasicModal>

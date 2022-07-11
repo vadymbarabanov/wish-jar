@@ -1,45 +1,33 @@
 import React from 'react';
 import { GetOptions } from '../../types/Navigation';
 import { StyleSheet } from 'react-native';
-import { IconButton } from '../../components/Buttons/IconButton';
-import { MenuIcon } from '../../components/Icons/MenuIcon';
-import { ArrowIcon } from '../../components/Icons/ArrowIcon';
+import { ParamListBase } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { BackButton } from '../../components/Buttons/IconButton/BackButton';
+import { MenuButton } from '../../components/Buttons/IconButton/MenuButton';
 
 const styles = StyleSheet.create({
   headerButtons: {
     paddingHorizontal: 20,
   },
-  iconPadding: {
-    padding: 0,
-  },
 });
 
-export const getHeaderOptions: GetOptions = (navigation, title) => {
+export const getHeaderOptions: GetOptions = (navigation, headerTitle) => {
   return {
-    headerLeft: () => (
-      <IconButton
-        containerStyles={styles.iconPadding}
-        icon={<ArrowIcon />}
-        onPress={navigation.goBack}
-      />
-    ),
+    headerLeft: () => <BackButton onPress={navigation.goBack} />,
     headerLeftContainerStyle: styles.headerButtons,
     headerRightContainerStyle: styles.headerButtons,
-    headerTitle: title,
+    headerTitle,
     title: '',
     headerTitleAlign: 'center',
   };
 };
 
-export const getHomeHeaderOptions: GetOptions = (navigation, title) => {
+export const getHomeHeaderOptions: GetOptions<
+  DrawerNavigationProp<ParamListBase, keyof ParamListBase>
+> = (navigation, title) => {
   return {
     ...getHeaderOptions(navigation, title),
-    headerLeft: () => (
-      <IconButton
-        containerStyles={styles.iconPadding}
-        icon={<MenuIcon />}
-        onPress={navigation.openDrawer}
-      />
-    ),
+    headerLeft: () => <MenuButton onPress={navigation.openDrawer} />,
   };
 };

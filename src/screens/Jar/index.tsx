@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   TextInput,
   View,
@@ -11,21 +11,52 @@ import { JarIcon } from '../../components/Icons/JarIcon';
 import { DEVICE_WIDTH } from '../../constants/device';
 import { createStyles } from './styles';
 import { Button } from '../../components/Buttons/Button';
+import { MainScreenProps } from '../../navigation/MainStack';
+import { MainStackRoutes } from '../../navigation/routes';
+import { BackButton } from '../../components/Buttons/IconButton/BackButton';
+import { ConfirmModal } from '../../components/Modals/ConfirmModal';
+import { useTranslation } from 'react-i18next';
 
 export const JAR_WIDTH = DEVICE_WIDTH - 128;
 const DEFAULT_LABEL = 'My wishes';
 
-interface JarProps {
-  route: any;
-}
-
-export const Jar = ({ route }: JarProps) => {
+export const Jar = ({
+  route,
+  navigation,
+}: MainScreenProps<MainStackRoutes.JAR>) => {
+  const { t } = useTranslation('jar');
   const styles = useStyles(createStyles);
   const textInputRef = useRef<TextInput | null>();
-  const { isNewelyAdded } = route.params;
-  const [isNew, setIsNew] = useState(isNewelyAdded);
-  const [editable, setEditable] = useState(isNewelyAdded);
+  const { isNewlyAdded } = route.params;
+  const [isNew, setIsNew] = useState(isNewlyAdded);
+  const [editable, setEditable] = useState(isNewlyAdded);
   const [value, setValue] = useState(DEFAULT_LABEL);
+  const [saveModalVisisble, setSaveModalVisisble] = useState(false);
+
+  const handleInputChange = (text: string) => {
+    // It's no longer new after label changes
+    setIsNew(false);
+    setValue(text);
+  };
+
+  const onBackPress = () => {
+    if (isNew) {
+      setSaveModalVisisble(true);
+      return;
+    }
+
+    navigation.goBack();
+  };
+
+  const dismissModal = () => {
+    setSaveModalVisisble(false);
+    navigation.goBack();
+  };
+
+  const handleSubmit = () => {
+    console.log('jar was saved');
+    dismissModal();
+  };
 
   // [React Native Love] selectTextOnFocus does not work with autoFocus
   useEffect(() => {
@@ -40,11 +71,11 @@ export const Jar = ({ route }: JarProps) => {
     }
   }, [editable]);
 
-  const handleInputChange = (text: string) => {
-    // It's no longer new after label changes
-    setIsNew(false);
-    setValue(text);
-  };
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => <BackButton onPress={onBackPress} />,
+    });
+  }, [navigation]);
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -73,6 +104,13 @@ export const Jar = ({ route }: JarProps) => {
           <Button text="Додати бажання" style={styles.btn} />
           <Button text="Дістати бажання" style={styles.btn} />
         </View>
+
+        <ConfirmModal
+          visible={saveModalVisisble}
+          text={t('save-modal-title')}
+          onSubmit={handleSubmit}
+          onDismiss={dismissModal}
+        />
       </View>
     </TouchableWithoutFeedback>
   );

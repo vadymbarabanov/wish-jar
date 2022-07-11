@@ -33,28 +33,36 @@ export const SettingsStack = () => {
   return (
     <Stack.Navigator initialRouteName={SettingsStackRoutes.SETTINGS}>
       <Stack.Screen
-        options={({ navigation }) =>
+        options={({
+          navigation,
+        }: SettingsScreenProps<SettingsStackRoutes.SETTINGS>) =>
           getHeaderOptions(navigation, t('settings'))
         }
         name={SettingsStackRoutes.SETTINGS}
         component={Settings}
       />
       <Stack.Screen
-        options={({ navigation }) =>
+        options={({
+          navigation,
+        }: SettingsScreenProps<SettingsStackRoutes.LANGUAGES>) =>
           getHeaderOptions(navigation, t('language'))
         }
         name={SettingsStackRoutes.LANGUAGES}
         component={Languages}
       />
       <Stack.Screen
-        options={({ navigation }) =>
+        options={({
+          navigation,
+        }: SettingsScreenProps<SettingsStackRoutes.OLD_PASSSWORD>) =>
           getHeaderOptions(navigation, t('change-password'))
         }
         name={SettingsStackRoutes.OLD_PASSSWORD}
         component={OldPassword}
       />
       <Stack.Screen
-        options={({ navigation }) =>
+        options={({
+          navigation,
+        }: SettingsScreenProps<SettingsStackRoutes.NEW_PASSSWORD>) =>
           getHeaderOptions(navigation, t('change-password'))
         }
         name={SettingsStackRoutes.NEW_PASSSWORD}

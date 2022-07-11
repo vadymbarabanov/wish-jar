@@ -9,23 +9,28 @@ import { BasicModal, ModalProps } from '../BasicModal';
 import { ContentWrapper } from '../ContentWrapper';
 import { createStyles } from './styles';
 
+interface SaveJarModalProps extends ModalProps {
+  onSignInPress: () => void;
+  dismissModal: () => void;
+}
+
 export const SaveJarsModal = ({
   visible,
-  setVisible,
+  dismissModal,
   onSignInPress,
-}: ModalProps & { onSignInPress: () => void }) => {
+}: SaveJarModalProps) => {
   const styles = useStyles(createStyles);
   const { t } = useTranslation('save-jars-modal');
   const [active, setActive] = useState(false);
 
   const handleSignInPress = () => {
-    setVisible(false);
+    dismissModal();
     onSignInPress();
   };
 
   return (
-    <BasicModal visible={visible} setVisible={setVisible}>
-      <ContentWrapper closeModal={() => setVisible(false)}>
+    <BasicModal visible={visible} onDismiss={dismissModal}>
+      <ContentWrapper closeModal={dismissModal}>
         <Text style={styles.title}>{t('title')}</Text>
         <Checkbox
           style={styles.checkbox}
